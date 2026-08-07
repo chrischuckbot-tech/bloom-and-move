@@ -75,6 +75,10 @@ const dailyMessages = [
     loveNote: "One more rep, then come collect your reward. ♡",
     footer: "Future mama in training—lucky me. ♡",
   },
+  {
+    loveNote: "Tonight you have 3 sets of bouncing on it crazy style. ♡",
+    footer: "Your favorite workout starts after this one. ♡",
+  },
 ] as const;
 
 function startOfDay(date: Date) {
