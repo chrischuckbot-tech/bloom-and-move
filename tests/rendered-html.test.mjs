@@ -43,10 +43,14 @@ test("exports a GitHub Pages-ready workout app", async () => {
   const squat = parsedWorkouts.workouts.lower.exercises.find(
     (exercise) => exercise.name === "Dumbbell Goblet Squat",
   );
+  const legPress = parsedWorkouts.workouts.lower.exercises.find(
+    (exercise) => exercise.name === "Seated Leg Press",
+  );
   const lateralRaise = parsedWorkouts.workouts.upper.exercises.find(
     (exercise) => exercise.name === "Dumbbell Lateral Raise",
   );
   assert.match(squat.details, /knees outward.*outer edges of your feet/i);
+  assert.match(legPress.details, /knees outward over your middle toes/i);
   assert.match(lateralRaise.details, /shoulders away from your ears.*without swinging/i);
 
   const videos = Object.values(parsedWorkouts.workouts)
