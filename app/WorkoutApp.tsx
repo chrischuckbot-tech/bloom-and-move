@@ -98,6 +98,16 @@ function getMonthGrid(month: Date) {
   });
 }
 
+function getYouTubeVideoId(videoUrl: string) {
+  try {
+    const parsed = new URL(videoUrl);
+    const id = parsed.searchParams.get("v");
+    return id && /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : null;
+  } catch {
+    return null;
+  }
+}
+
 function Chevron({ direction }: { direction: "left" | "right" }) {
   return <span aria-hidden="true">{direction === "left" ? "‹" : "›"}</span>;
 }
@@ -108,6 +118,7 @@ export function WorkoutApp() {
   const [visibleMonth, setVisibleMonth] = useState<Date | null>(null);
   const [completed, setCompleted] = useState<string[]>([]);
   const [showInstallTip, setShowInstallTip] = useState(false);
+  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -157,6 +168,7 @@ export function WorkoutApp() {
     const next = startOfDay(date);
     setSelectedDate(next);
     setCompleted(readCompleted(next));
+    setPlayingVideo(null);
     if (
       next.getMonth() !== visibleMonth!.getMonth() ||
       next.getFullYear() !== visibleMonth!.getFullYear()
@@ -338,6 +350,10 @@ export function WorkoutApp() {
           <div className="exercise-list">
             {workout.exercises.map((exercise, index) => {
               const checked = completed.includes(String(index));
+              const videoId = getYouTubeVideoId(exercise.video);
+              const playerKey = `${dateKey(selectedDate)}-${index}`;
+              const isPlaying = playingVideo === playerKey;
+              const playerId = `exercise-video-${index}`;
               return (
                 <article className={`exercise-card${checked ? " complete" : ""}`} key={exercise.name}>
                   <button
@@ -355,15 +371,31 @@ export function WorkoutApp() {
                       <span className="prescription">{exercise.prescription}</span>
                     </div>
                     <p>{exercise.details}</p>
-                    <a
-                      className="video-link"
-                      href={exercise.video}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <span aria-hidden="true">▶</span> {exercise.videoLabel}
-                    </a>
+                    {videoId && (
+                      <button
+                        className={`video-button${isPlaying ? " active" : ""}`}
+                        type="button"
+                        onClick={() => setPlayingVideo(isPlaying ? null : playerKey)}
+                        aria-expanded={isPlaying}
+                        aria-controls={playerId}
+                      >
+                        <span aria-hidden="true">{isPlaying ? "×" : "▶"}</span>
+                        {isPlaying ? "Close video" : exercise.videoLabel}
+                      </button>
+                    )}
                   </div>
+                  {videoId && isPlaying && (
+                    <div className="video-player" id={playerId}>
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`}
+                        title={`${exercise.name} form video`}
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    </div>
+                  )}
                 </article>
               );
             })}
