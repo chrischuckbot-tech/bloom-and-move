@@ -1,0 +1,165 @@
+{
+  "schedule": {
+    "monday": { "label": "Day 1", "workout": "lower" },
+    "tuesday": { "label": "Day 2", "workout": "upper" },
+    "wednesday": { "label": "Day 3", "workout": "cardio" },
+    "thursday": { "label": "Day 4", "workout": "lower" },
+    "friday": { "label": "Day 5", "workout": "upper" },
+    "saturday": { "label": "Recovery", "workout": "recovery" },
+    "sunday": { "label": "Recovery", "workout": "recovery" }
+  },
+  "workouts": {
+    "lower": {
+      "title": "Lower Body + Steady Cardio",
+      "shortTitle": "Lower body day",
+      "focus": "Leg strength, hip stability, and easy endurance.",
+      "duration": "About 45 min",
+      "kind": "lower",
+      "note": "Weeks 1–2: keep every weight light and focus on feeling comfortable with each movement.",
+      "exercises": [
+        {
+          "name": "Zone 2 Cardio",
+          "prescription": "20 min",
+          "details": "Incline treadmill at 2–4% and 2.5–3.5 mph, or use a stationary bike. Keep a conversation pace without gasping.",
+          "video": "https://www.youtube.com/watch?v=38vUyIo69ww",
+          "videoLabel": "Watch incline walking form"
+        },
+        {
+          "name": "Dumbbell Goblet Squat",
+          "prescription": "3 × 8–10",
+          "details": "Hold a light dumbbell at your chest. Sit hips back and drive knees outward over your middle toes. Stop at 2 RIR.",
+          "video": "https://www.youtube.com/watch?v=nfX7IFK9UNI",
+          "videoLabel": "Watch NASM form guide"
+        },
+        {
+          "name": "Seated Leg Press",
+          "prescription": "3 × 10–12",
+          "details": "Move with control and keep a soft bend in your knees at the top—do not lock them out. Stop at 2 RIR.",
+          "video": "https://www.youtube.com/watch?v=qCR9bN3G1t4",
+          "videoLabel": "Watch PureGym setup"
+        },
+        {
+          "name": "Hip Abduction Machine",
+          "prescription": "3 × 12–15",
+          "details": "Sit back against the pad and push your knees outward with control. Stop at 2 RIR.",
+          "video": "https://www.youtube.com/watch?v=ctSsNDgOTmk",
+          "videoLabel": "Watch machine setup"
+        },
+        {
+          "name": "Hip Adduction Machine",
+          "prescription": "3 × 12–15",
+          "details": "Sit back against the pad and squeeze your knees inward together. Stop at 2 RIR.",
+          "video": "https://www.youtube.com/watch?v=iYcS9jCA6gE",
+          "videoLabel": "Watch machine setup"
+        },
+        {
+          "name": "Seated Leg Curl",
+          "prescription": "3 × 10–12",
+          "details": "Adjust the seat so your knees line up with the machine pivot. Curl smoothly and return with control. Stop at 2 RIR.",
+          "video": "https://www.youtube.com/watch?v=_2Kd0d-JEUM",
+          "videoLabel": "Watch NASM form guide"
+        }
+      ]
+    },
+    "upper": {
+      "title": "Upper Body + Incline Intervals",
+      "shortTitle": "Upper body day",
+      "focus": "Back, shoulders, chest, and core—with a heart-rate boost.",
+      "duration": "About 45 min",
+      "kind": "upper",
+      "note": "Rest 60–90 seconds between strength sets. There is no prize for rushing.",
+      "exercises": [
+        {
+          "name": "Incline Treadmill Intervals",
+          "prescription": "15 min",
+          "details": "Alternate 1 minute brisk at 6–8% incline and 2.8–3.5 mph with 1 minute easy at 1–2% incline.",
+          "video": "https://www.youtube.com/watch?v=38vUyIo69ww",
+          "videoLabel": "Watch incline walking form"
+        },
+        {
+          "name": "Lat Pulldown",
+          "prescription": "3 × 10–12",
+          "details": "Pull the bar toward your upper chest and squeeze your shoulder blades together. Stop at 2 RIR.",
+          "video": "https://www.youtube.com/watch?v=JGeRYIZdojU",
+          "videoLabel": "Watch PureGym form guide"
+        },
+        {
+          "name": "Seated Cable Row",
+          "prescription": "3 × 10–12",
+          "details": "Keep your chest up and pull the handle toward your belly button. Return slowly. Stop at 2 RIR.",
+          "video": "https://www.youtube.com/watch?v=lJoozxC0Rns",
+          "videoLabel": "Watch PureGym form guide"
+        },
+        {
+          "name": "Dumbbell Lateral Raise",
+          "prescription": "3 × 12–15",
+          "details": "Use light dumbbells. With soft elbows, raise your arms to shoulder height and lower with control. Stop at 2 RIR.",
+          "video": "https://www.youtube.com/watch?v=xDrYB81QXmY",
+          "videoLabel": "Watch PureGym form guide"
+        },
+        {
+          "name": "Chest Press Machine",
+          "prescription": "3 × 10–12",
+          "details": "Set the handles at mid-chest. Press smoothly and keep a soft bend in your elbows. Stop at 2 RIR.",
+          "video": "https://www.youtube.com/watch?v=sqNwDkUU_Ps",
+          "videoLabel": "Watch PureGym setup"
+        },
+        {
+          "name": "Plank Hold",
+          "prescription": "3 × 20–30 sec",
+          "details": "Keep elbows under shoulders and make one long line from head to heels. Squeeze your core and breathe.",
+          "video": "https://www.youtube.com/watch?v=q4rDeHYMcIg",
+          "videoLabel": "Watch PureGym form guide"
+        }
+      ]
+    },
+    "cardio": {
+      "title": "Cardio Glow",
+      "shortTitle": "Cardio-only day",
+      "focus": "A simple midweek endurance day—no strength machines today.",
+      "duration": "30 min",
+      "kind": "cardio",
+      "note": "Use the treadmill or stationary bike. Keep the effort steady enough that you can still speak in full sentences.",
+      "exercises": [
+        {
+          "name": "Zone 2 Cardio",
+          "prescription": "30 min",
+          "details": "Walk at 2–4% incline and 2.5–3.5 mph, or pedal at an equally steady conversation pace. Finish feeling like you could do a little more.",
+          "video": "https://www.youtube.com/watch?v=38vUyIo69ww",
+          "videoLabel": "Watch incline walking form"
+        }
+      ]
+    },
+    "recovery": {
+      "title": "Rest & Reset",
+      "shortTitle": "Recovery day",
+      "focus": "Walk, stretch, or just relax. Recovery is real training, too.",
+      "duration": "Your choice",
+      "kind": "recovery",
+      "exercises": []
+    }
+  },
+  "intensity": {
+    "title": "The 2 RIR rule",
+    "short": "Leave two good reps in the tank.",
+    "detail": "Choose a weight where the end of the set feels challenging, but you could still do exactly two more clean reps before your form would break down."
+  },
+  "tips": [
+    {
+      "title": "How do I pick a starting weight?",
+      "text": "Start lighter than you think. If the final rep still feels very easy, add a small amount next time. If form gets shaky, lower the weight."
+    },
+    {
+      "title": "What should lateral raises feel like?",
+      "text": "Use light dumbbells—5–8 lb is plenty to start. Keep your shoulders away from your ears and move slowly enough that you are not swinging."
+    },
+    {
+      "title": "What if my knees cave during squats?",
+      "text": "Think about gently pushing your knees outward over your middle toes and pressing through the outer edges of your feet as you stand."
+    },
+    {
+      "title": "How long should I rest?",
+      "text": "Take 60–90 seconds between strength sets. Catch your breath, reset your form, and start the next set when you feel ready."
+    }
+  ]
+}
