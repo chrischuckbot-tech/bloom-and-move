@@ -46,6 +46,37 @@ const weekdayKeys: WeekdayKey[] = [
 const calendarWeekdays = ["S", "M", "T", "W", "T", "F", "S"];
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
+const dailyMessages = [
+  {
+    loveNote: "Getting stronger, sweatier, and ready to put that cardio to recreational use.",
+    footer: "Working out now so you can have my babies later ♡",
+  },
+  {
+    loveNote: "Getting strong so I can put a baby in you someday ♡",
+    footer: "Every rep makes you even harder to keep my hands off. ♡",
+  },
+  {
+    loveNote: "Save those sweaty panties for me—I want to smell how hard you worked. ♡",
+    footer: "Strong legs, filthy thoughts, perfect combination. ♡",
+  },
+  {
+    loveNote: "Sweat now. I’ll help you cool down later. ♡",
+    footer: "Training for the kind of cardio we actually enjoy. ♡",
+  },
+  {
+    loveNote: "Build that stamina—I’ve got plans for it. ♡",
+    footer: "Get strong, stay sexy, come home to me. ♡",
+  },
+  {
+    loveNote: "I love watching you get hot and out of breath. ♡",
+    footer: "Sweat looks ridiculously good on you. ♡",
+  },
+  {
+    loveNote: "One more rep, then come collect your reward. ♡",
+    footer: "Future mama in training—lucky me. ♡",
+  },
+] as const;
+
 function startOfDay(date: Date) {
   return new Date(date.getFullYear(), date.getMonth(), date.getDate());
 }
@@ -62,6 +93,13 @@ function dateKey(date: Date) {
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const day = String(date.getDate()).padStart(2, "0");
   return `${date.getFullYear()}-${month}-${day}`;
+}
+
+function getDailyMessage(date: Date) {
+  const dayNumber = Math.floor(
+    Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86_400_000,
+  );
+  return dailyMessages[dayNumber % dailyMessages.length];
 }
 
 function readCompleted(date: Date) {
@@ -157,6 +195,7 @@ export function WorkoutApp() {
 
   const schedule = getSchedule(selectedDate);
   const workout = getWorkout(selectedDate);
+  const dailyMessage = getDailyMessage(selectedDate);
   const selectedIsToday = isSameDay(selectedDate, today);
   const progress = workout.exercises.length
     ? Math.round((completed.length / workout.exercises.length) * 100)
@@ -201,9 +240,9 @@ export function WorkoutApp() {
   return (
     <main className="app-shell">
       <header className="topbar">
-        <a className="brand" href="#today" aria-label="Bloom and Move home">
+        <a className="brand" href="#today" aria-label="Erie’s Workout home">
           <span className="brand-mark" aria-hidden="true">✿</span>
-          <span>Bloom &amp; Move</span>
+          <span>Erie’s Workout</span>
         </a>
         <span className="tiny-note">strong looks sexy on you ♡</span>
       </header>
@@ -250,7 +289,7 @@ export function WorkoutApp() {
 
       <aside className="love-note" aria-label="A little love note">
         <span aria-hidden="true">♡</span>
-        <p>Getting stronger, sweatier, and ready to put that cardio to recreational use.</p>
+        <p>{dailyMessage.loveNote}</p>
       </aside>
 
       <section className="calendar-card" aria-labelledby="calendar-heading">
@@ -342,7 +381,12 @@ export function WorkoutApp() {
           )}
         </div>
 
-        {workout.note && <p className="routine-note">{workout.note}</p>}
+        {workout.note && (
+          <section className="routine-guidance" aria-label="Before you start">
+            <h3>Before you start</h3>
+            <p>{workout.note}</p>
+          </section>
+        )}
 
         {workout.exercises.length > 0 ? (
           <div className="exercise-list">
@@ -369,29 +413,44 @@ export function WorkoutApp() {
                       <span className="prescription">{exercise.prescription}</span>
                     </div>
                     <p>{exercise.details}</p>
-                    {videoId && (
+                    {videoId && !isPlaying && (
                       <button
-                        className={`video-button${isPlaying ? " active" : ""}`}
+                        className="video-button"
                         type="button"
-                        onClick={() => setPlayingVideo(isPlaying ? null : playerKey)}
-                        aria-expanded={isPlaying}
+                        onClick={() => setPlayingVideo(playerKey)}
+                        aria-expanded="false"
                         aria-controls={playerId}
                       >
-                        <span aria-hidden="true">{isPlaying ? "×" : "▶"}</span>
-                        {isPlaying ? "Close video" : exercise.videoLabel}
+                        <span aria-hidden="true">▶</span>
+                        {exercise.videoLabel}
                       </button>
                     )}
                   </div>
                   {videoId && isPlaying && (
-                    <div className="video-player" id={playerId}>
-                      <iframe
-                        src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`}
-                        title={`${exercise.name} form video`}
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                      />
+                    <div className="video-panel" id={playerId}>
+                      <div className="video-toolbar">
+                        <span>Form video</span>
+                        <button
+                          className="video-close-button"
+                          type="button"
+                          onClick={() => setPlayingVideo(null)}
+                          aria-label={`Close ${exercise.name} form video`}
+                          aria-controls={playerId}
+                        >
+                          <span aria-hidden="true">×</span>
+                          Close
+                        </button>
+                      </div>
+                      <div className="video-player">
+                        <iframe
+                          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`}
+                          title={`${exercise.name} form video`}
+                          loading="lazy"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
                     </div>
                   )}
                 </article>
@@ -409,7 +468,7 @@ export function WorkoutApp() {
 
       <footer>
         <span aria-hidden="true">✿</span>
-        <p>Strong today. Sexy always. Future family loading… ♡</p>
+        <p>{dailyMessage.footer}</p>
         <small>If anything hurts—not just feels challenging—stop and ask a trainer.</small>
       </footer>
     </main>

@@ -1,4 +1,4 @@
-const CACHE_NAME = "bloom-and-move-v1";
+const CACHE_NAME = "eries-workout-v1";
 const APP_SHELL = new URL("./", self.location.href).href;
 const CORE_FILES = [
   APP_SHELL,

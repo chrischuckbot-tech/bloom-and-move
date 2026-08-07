@@ -12,7 +12,7 @@ test("exports a GitHub Pages-ready workout app", async () => {
     readFile(new URL("dist/client/sw.js", root), "utf8"),
   ]);
 
-  assert.match(html, /<title>Bloom &amp; Move<\/title>/i);
+  assert.match(html, /<title>Erie’s Workout<\/title>/i);
   assert.match(html, /manifest\.webmanifest/i);
   assert.match(html, /og\.png/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
@@ -22,6 +22,7 @@ test("exports a GitHub Pages-ready workout app", async () => {
   }
 
   const parsedManifest = JSON.parse(manifest);
+  assert.equal(parsedManifest.name, "Erie’s Workout");
   assert.equal(parsedManifest.display, "standalone");
   assert.equal(parsedManifest.start_url, "./");
   assert.equal(parsedManifest.icons.length, 2);
@@ -32,6 +33,7 @@ test("exports a GitHub Pages-ready workout app", async () => {
   assert.equal(parsedWorkouts.schedule.friday.label, "Day 5");
   assert.equal(parsedWorkouts.workouts.lower.exercises.length, 6);
   assert.equal(parsedWorkouts.workouts.upper.exercises.length, 6);
+  assert.match(parsedWorkouts.workouts.upper.note, /2 reps in reserve \(RIR\)/i);
   assert.equal("intensity" in parsedWorkouts, false);
   assert.equal("tips" in parsedWorkouts, false);
 

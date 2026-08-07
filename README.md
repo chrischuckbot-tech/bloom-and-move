@@ -1,4 +1,4 @@
-# Bloom & Move
+# Erie’s Workout
 
 A tiny, mobile-first workout calendar that works as an installable iPhone web app. It has no server, no accounts, and no sensitive data.
 

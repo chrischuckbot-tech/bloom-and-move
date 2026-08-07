@@ -9,12 +9,12 @@ const socialImageUrl = `${siteOrigin}${basePath}/og.png`;
 export const metadata: Metadata = {
   metadataBase: new URL(canonicalUrl),
   title: {
-    default: "Bloom & Move",
-    template: "%s · Bloom & Move",
+    default: "Erie’s Workout",
+    template: "%s · Erie’s Workout",
   },
   description:
     "A cute, simple, beginner-friendly weekly workout plan with an easy calendar view.",
-  applicationName: "Bloom & Move",
+  applicationName: "Erie’s Workout",
   manifest: `${basePath}/manifest.webmanifest`,
   icons: {
     icon: `${basePath}/icon-192.png`,
@@ -23,26 +23,26 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Bloom & Move",
+    title: "Erie’s Workout",
   },
   openGraph: {
     type: "website",
     url: canonicalUrl,
-    title: "Bloom & Move",
+    title: "Erie’s Workout",
     description: "A gentle weekly workout plan—one day at a time.",
-    siteName: "Bloom & Move",
+    siteName: "Erie’s Workout",
     images: [
       {
         url: socialImageUrl,
         width: 1731,
         height: 909,
-        alt: "Bloom & Move workout calendar",
+        alt: "Erie’s Workout calendar",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bloom & Move",
+    title: "Erie’s Workout",
     description: "A gentle weekly workout plan—one day at a time.",
     images: [socialImageUrl],
   },
