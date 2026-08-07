@@ -240,7 +240,7 @@ export function WorkoutApp() {
 
       <aside className="love-note" aria-label="A little love note">
         <span aria-hidden="true">♡</span>
-        <p>For feeling strong, sexy, and ready for our next big adventure.</p>
+        <p>Getting stronger, sweatier, and ready to put that cardio to recreational use.</p>
       </aside>
 
       <section className="calendar-card" aria-labelledby="calendar-heading">
