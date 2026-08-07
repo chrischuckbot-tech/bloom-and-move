@@ -31,8 +31,6 @@ type WeekdayKey = keyof typeof workoutPlan.schedule;
 const plan = workoutPlan as {
   schedule: Record<WeekdayKey, ScheduleEntry>;
   workouts: Record<string, Workout>;
-  intensity: { title: string; short: string; detail: string };
-  tips: Array<{ title: string; text: string }>;
 };
 
 const weekdayKeys: WeekdayKey[] = [
@@ -407,32 +405,6 @@ export function WorkoutApp() {
             <p>Walk, stretch, or completely relax. You earned the soft day.</p>
           </div>
         )}
-      </section>
-
-      <aside className="rir-card">
-        <div className="rir-number" aria-hidden="true">2</div>
-        <div>
-          <p className="section-kicker">{plan.intensity.title}</p>
-          <h2>{plan.intensity.short}</h2>
-          <p>{plan.intensity.detail}</p>
-        </div>
-      </aside>
-
-      <section className="tips-section" aria-labelledby="tips-heading">
-        <div className="section-heading">
-          <div>
-            <p className="section-kicker">Good to remember</p>
-            <h2 id="tips-heading">Tiny gym tips</h2>
-          </div>
-        </div>
-        <div className="tips-list">
-          {plan.tips.map((tip) => (
-            <details key={tip.title}>
-              <summary>{tip.title}<span aria-hidden="true">＋</span></summary>
-              <p>{tip.text}</p>
-            </details>
-          ))}
-        </div>
       </section>
 
       <footer>

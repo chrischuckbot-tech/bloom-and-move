@@ -27,7 +27,7 @@
         {
           "name": "Dumbbell Goblet Squat",
           "prescription": "3 × 8–10",
-          "details": "Hold a light dumbbell at your chest. Sit hips back and drive knees outward over your middle toes. Stop at 2 RIR.",
+          "details": "Hold a light dumbbell at your chest. Sit your hips back, gently drive your knees outward over your middle toes, and press through the outer edges of your feet as you stand. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=nfX7IFK9UNI",
           "videoLabel": "Watch NASM form guide"
         },
@@ -93,7 +93,7 @@
         {
           "name": "Dumbbell Lateral Raise",
           "prescription": "3 × 12–15",
-          "details": "Use light dumbbells. With soft elbows, raise your arms to shoulder height and lower with control. Stop at 2 RIR.",
+          "details": "Use light dumbbells—5–8 lb is plenty to start. Keep your shoulders away from your ears and your elbows soft, then raise your arms to shoulder height without swinging and lower with control. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=xDrYB81QXmY",
           "videoLabel": "Watch PureGym form guide"
         },
@@ -138,28 +138,5 @@
       "kind": "recovery",
       "exercises": []
     }
-  },
-  "intensity": {
-    "title": "The 2 RIR rule",
-    "short": "Leave two good reps in the tank.",
-    "detail": "Choose a weight where the end of the set feels challenging, but you could still do exactly two more clean reps before your form would break down."
-  },
-  "tips": [
-    {
-      "title": "How do I pick a starting weight?",
-      "text": "Start lighter than you think. If the final rep still feels very easy, add a small amount next time. If form gets shaky, lower the weight."
-    },
-    {
-      "title": "What should lateral raises feel like?",
-      "text": "Use light dumbbells—5–8 lb is plenty to start. Keep your shoulders away from your ears and move slowly enough that you are not swinging."
-    },
-    {
-      "title": "What if my knees cave during squats?",
-      "text": "Think about gently pushing your knees outward over your middle toes and pressing through the outer edges of your feet as you stand."
-    },
-    {
-      "title": "How long should I rest?",
-      "text": "Take 60–90 seconds between strength sets. Catch your breath, reset your form, and start the next set when you feel ready."
-    }
-  ]
+  }
 }

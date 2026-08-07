@@ -32,6 +32,17 @@ test("exports a GitHub Pages-ready workout app", async () => {
   assert.equal(parsedWorkouts.schedule.friday.label, "Day 5");
   assert.equal(parsedWorkouts.workouts.lower.exercises.length, 6);
   assert.equal(parsedWorkouts.workouts.upper.exercises.length, 6);
+  assert.equal("intensity" in parsedWorkouts, false);
+  assert.equal("tips" in parsedWorkouts, false);
+
+  const squat = parsedWorkouts.workouts.lower.exercises.find(
+    (exercise) => exercise.name === "Dumbbell Goblet Squat",
+  );
+  const lateralRaise = parsedWorkouts.workouts.upper.exercises.find(
+    (exercise) => exercise.name === "Dumbbell Lateral Raise",
+  );
+  assert.match(squat.details, /knees outward.*outer edges of your feet/i);
+  assert.match(lateralRaise.details, /shoulders away from your ears.*without swinging/i);
 
   const videos = Object.values(parsedWorkouts.workouts)
     .flatMap((workout) => workout.exercises)

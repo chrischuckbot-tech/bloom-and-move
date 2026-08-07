@@ -307,8 +307,7 @@ summary:focus-visible {
 }
 
 .calendar-card,
-.routine-section,
-.tips-section {
+.routine-section {
   margin-bottom: 18px;
   padding: 22px 18px;
   border: 1px solid var(--line);
@@ -329,8 +328,7 @@ summary:focus-visible {
   color: var(--coral);
 }
 
-.section-heading h2,
-.rir-card h2 {
+.section-heading h2 {
   margin: 0;
   color: var(--deep-plum);
   font-family: Georgia, "Times New Roman", serif;
@@ -673,83 +671,6 @@ summary:focus-visible {
   line-height: 1.5;
 }
 
-.rir-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 18px;
-  margin-bottom: 18px;
-  padding: 22px;
-  border-radius: 26px;
-  background: var(--butter);
-  color: var(--deep-plum);
-  box-shadow: var(--shadow);
-}
-
-.rir-number {
-  display: grid;
-  width: 62px;
-  height: 62px;
-  place-items: center;
-  border: 2px solid rgba(77, 44, 63, 0.2);
-  border-radius: 50%;
-  font-family: Georgia, serif;
-  font-size: 34px;
-}
-
-.rir-card .section-kicker {
-  margin-top: 3px;
-  color: #8e5c32;
-}
-
-.rir-card p:last-child {
-  margin: 9px 0 0;
-  color: #6f543b;
-  font-size: 13px;
-  line-height: 1.52;
-}
-
-.tips-list {
-  border-top: 1px solid var(--line);
-}
-
-.tips-list details {
-  border-bottom: 1px solid var(--line);
-}
-
-.tips-list summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 16px 2px;
-  list-style: none;
-  color: var(--deep-plum);
-  font-size: 14px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.tips-list summary::-webkit-details-marker {
-  display: none;
-}
-
-.tips-list summary span {
-  font-size: 19px;
-  font-weight: 400;
-  transition: transform 160ms ease;
-}
-
-.tips-list details[open] summary span {
-  transform: rotate(45deg);
-}
-
-.tips-list details p {
-  margin: -5px 2px 17px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.55;
-}
-
 footer {
   padding: 24px 20px 8px;
   color: var(--plum);
@@ -799,8 +720,7 @@ footer small {
   }
 
   .calendar-card,
-  .routine-section,
-  .tips-section {
+  .routine-section {
     padding: 28px;
   }
 
