@@ -114,19 +114,19 @@
       ]
     },
     "cardio": {
-      "title": "Cardio Glow",
-      "shortTitle": "Cardio-only day",
-      "focus": "A simple midweek endurance day—no strength machines today.",
+      "title": "30-Minute Walk-Run",
+      "shortTitle": "Walk-run day",
+      "focus": "A simple midweek walk-run to build endurance at a comfortable pace.",
       "duration": "30 min",
       "kind": "cardio",
-      "note": "Use the treadmill or stationary bike. Keep the effort steady enough that you can still speak in full sentences.",
+      "note": "Use a treadmill or a flat, predictable outdoor route. Keep the running intervals easy enough that you could say a short sentence.",
       "exercises": [
         {
-          "name": "Zone 2 Cardio",
+          "name": "Walk-Run Intervals",
           "prescription": "30 min",
-          "details": "Walk at 2–4% incline and 2.5–3.5 mph, or pedal at an equally steady conversation pace. Finish feeling like you could do a little more.",
+          "details": "Walk for 5 minutes to warm up. Then alternate 1 minute of easy running with 2 minutes of brisk walking for 20 minutes. Finish with a 5-minute easy walk.",
           "video": "https://www.youtube.com/watch?v=38vUyIo69ww",
-          "videoLabel": "Watch incline walking form"
+          "videoLabel": "Watch treadmill walking form"
         }
       ]
     },

@@ -30,6 +30,9 @@ test("exports a GitHub Pages-ready workout app", async () => {
   const parsedWorkouts = JSON.parse(workouts);
   assert.equal(parsedWorkouts.schedule.monday.label, "Day 1");
   assert.equal(parsedWorkouts.schedule.wednesday.workout, "cardio");
+  assert.equal(parsedWorkouts.workouts.cardio.title, "30-Minute Walk-Run");
+  assert.equal(parsedWorkouts.workouts.cardio.duration, "30 min");
+  assert.equal(parsedWorkouts.workouts.cardio.exercises[0].name, "Walk-Run Intervals");
   assert.equal(parsedWorkouts.schedule.friday.label, "Day 5");
   assert.equal(parsedWorkouts.workouts.lower.exercises.length, 6);
   assert.equal(parsedWorkouts.workouts.upper.exercises.length, 6);

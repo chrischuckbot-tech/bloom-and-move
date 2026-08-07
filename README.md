@@ -10,7 +10,7 @@ Edit [`public/workouts.json`](public/workouts.json). The important pieces are:
 - `workouts`: titles, exercises, sets/reps, cues, and YouTube links
 - `tips`: the expandable notes at the bottom
 
-The calendar uses the normal Sunday-to-Saturday layout. Workout Day 1 is always Monday: lower body Monday, upper body Tuesday, cardio-only Wednesday, lower body Thursday, and upper body Friday.
+The calendar uses the normal Sunday-to-Saturday layout. Workout Day 1 is always Monday: lower body Monday, upper body Tuesday, a 30-minute walk-run Wednesday, lower body Thursday, and upper body Friday.
 
 ## Run it locally
 
