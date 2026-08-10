@@ -138,5 +138,136 @@
       "kind": "recovery",
       "exercises": []
     }
+  },
+  "homeWorkouts": {
+    "lower": {
+      "title": "At-Home Legs + Cardio",
+      "shortTitle": "Legs at home",
+      "focus": "Bodyweight leg strength, hip stability, and a low-impact heart-rate boost.",
+      "duration": "About 40 min",
+      "kind": "lower",
+      "note": "No equipment needed. Rest 45–75 seconds between sets, use a wall or chair for balance, and stop each set while your form still feels clean.",
+      "exercises": [
+        {
+          "name": "March & Step Cardio",
+          "prescription": "8 min",
+          "details": "Alternate 1 minute of a quick march in place with 1 minute of easy side steps. Swing your arms and keep the pace lively but conversational.",
+          "video": "",
+          "videoLabel": ""
+        },
+        {
+          "name": "Chair Squat",
+          "prescription": "3 × 10–15",
+          "details": "Tap your hips lightly to a sturdy chair, then stand. Keep your knees tracking over your middle toes and press through your whole foot.",
+          "video": "",
+          "videoLabel": ""
+        },
+        {
+          "name": "Glute Bridge",
+          "prescription": "3 × 12–15",
+          "details": "Lie on your back with knees bent. Press through your heels, squeeze your glutes, and lift until your hips and ribs form one line without arching your back.",
+          "video": "",
+          "videoLabel": ""
+        },
+        {
+          "name": "Supported Reverse Lunge",
+          "prescription": "3 × 8 each side",
+          "details": "Hold a wall or sturdy chair, step one foot back, and lower only as far as feels controlled. Keep the front knee tracking over the middle toes.",
+          "video": "",
+          "videoLabel": ""
+        },
+        {
+          "name": "Side-Lying Leg Raise",
+          "prescription": "3 × 12 each side",
+          "details": "Lie on your side with hips stacked. Lift the top leg without rolling backward, pause, and lower slowly.",
+          "video": "",
+          "videoLabel": ""
+        },
+        {
+          "name": "Standing Calf Raise",
+          "prescription": "3 × 15–20",
+          "details": "Hold a wall for balance, rise onto the balls of your feet, pause at the top, and lower with control.",
+          "video": "",
+          "videoLabel": ""
+        }
+      ]
+    },
+    "upper": {
+      "title": "At-Home Upper Body + Cardio",
+      "shortTitle": "Upper body at home",
+      "focus": "Push, pull, shoulders, and core using only your bodyweight.",
+      "duration": "About 40 min",
+      "kind": "upper",
+      "note": "Choose a wall, counter, or couch arm that makes the push-ups feel smooth. Rest 45–75 seconds between sets and leave about 2 clean reps in reserve.",
+      "exercises": [
+        {
+          "name": "Shadowboxing Intervals",
+          "prescription": "8 min",
+          "details": "Alternate 1 minute of light, quick punches with 1 minute of an easy march. Keep your knees soft and rotate gently through your hips.",
+          "video": "",
+          "videoLabel": ""
+        },
+        {
+          "name": "Incline Push-Up",
+          "prescription": "3 × 8–12",
+          "details": "Place your hands on a sturdy wall, counter, or couch arm. Keep one long line from head to heels, lower your chest with control, and press away.",
+          "video": "",
+          "videoLabel": ""
+        },
+        {
+          "name": "Prone W Pull",
+          "prescription": "3 × 10–12",
+          "details": "Lie face down with arms overhead. Lift your hands slightly, pull your elbows down into a W, squeeze your upper back, then reach long again.",
+          "video": "",
+          "videoLabel": ""
+        },
+        {
+          "name": "Kneeling Shoulder Tap",
+          "prescription": "3 × 8 each side",
+          "details": "From hands and knees, brace your core and tap the opposite shoulder without letting your hips twist. Move slowly.",
+          "video": "",
+          "videoLabel": ""
+        },
+        {
+          "name": "Dead Bug",
+          "prescription": "3 × 8 each side",
+          "details": "Lie on your back with arms up and knees bent. Keep your low back gently grounded as you extend the opposite arm and leg, then switch.",
+          "video": "",
+          "videoLabel": ""
+        },
+        {
+          "name": "Forearm Plank",
+          "prescription": "3 × 20–30 sec",
+          "details": "Use your knees or toes. Keep elbows under shoulders, brace your middle, squeeze your glutes, and breathe steadily.",
+          "video": "",
+          "videoLabel": ""
+        }
+      ]
+    },
+    "cardio": {
+      "title": "At-Home Cardio Circuit",
+      "shortTitle": "Cardio at home",
+      "focus": "A no-equipment, low-impact interval session you can do in a small space.",
+      "duration": "30 min",
+      "kind": "cardio",
+      "note": "Stay low-impact or turn the quick marches into an easy jog in place. You should be breathing harder while still able to say a short sentence.",
+      "exercises": [
+        {
+          "name": "Low-Impact Cardio Intervals",
+          "prescription": "30 min",
+          "details": "Warm up with a 5-minute easy march. For 20 minutes, alternate 1 minute of quick marching or jogging in place with 1 minute of easy side steps. Cool down with a 5-minute slow walk around the room.",
+          "video": "",
+          "videoLabel": ""
+        }
+      ]
+    },
+    "recovery": {
+      "title": "Rest & Reset at Home",
+      "shortTitle": "Recovery day",
+      "focus": "Take an easy walk, stretch for a few minutes, or fully rest.",
+      "duration": "Your choice",
+      "kind": "recovery",
+      "exercises": []
+    }
   }
 }

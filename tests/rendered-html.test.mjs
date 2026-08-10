@@ -37,6 +37,15 @@ test("exports a GitHub Pages-ready workout app", async () => {
   assert.equal(parsedWorkouts.workouts.lower.exercises.length, 6);
   assert.equal(parsedWorkouts.workouts.upper.exercises.length, 6);
   assert.match(parsedWorkouts.workouts.upper.note, /2 reps in reserve \(RIR\)/i);
+  assert.equal(parsedWorkouts.homeWorkouts.lower.title, "At-Home Legs + Cardio");
+  assert.equal(parsedWorkouts.homeWorkouts.lower.exercises.length, 6);
+  assert.equal(parsedWorkouts.homeWorkouts.upper.exercises.length, 6);
+  assert.equal(parsedWorkouts.homeWorkouts.cardio.duration, "30 min");
+  assert.match(parsedWorkouts.homeWorkouts.lower.note, /no equipment needed/i);
+  assert.match(
+    parsedWorkouts.homeWorkouts.cardio.exercises[0].details,
+    /marching or jogging in place/i,
+  );
   assert.equal("intensity" in parsedWorkouts, false);
   assert.equal("tips" in parsedWorkouts, false);
 

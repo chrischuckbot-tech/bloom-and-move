@@ -21,6 +21,8 @@ type Workout = {
   exercises: Exercise[];
 };
 
+type WorkoutMode = "gym" | "home";
+
 type ScheduleEntry = {
   label: string;
   workout: keyof typeof workoutPlan.workouts;
@@ -31,6 +33,7 @@ type WeekdayKey = keyof typeof workoutPlan.schedule;
 const plan = workoutPlan as {
   schedule: Record<WeekdayKey, ScheduleEntry>;
   workouts: Record<string, Workout>;
+  homeWorkouts: Record<string, Workout>;
 };
 
 const weekdayKeys: WeekdayKey[] = [
@@ -45,6 +48,8 @@ const weekdayKeys: WeekdayKey[] = [
 
 const calendarWeekdays = ["S", "M", "T", "W", "T", "F", "S"];
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const completedDaysStorageKey = "bloom-completed-days-v1";
+const workoutModeStorageKey = "bloom-workout-mode";
 
 const dailyMessages = [
   {
@@ -106,9 +111,14 @@ function getDailyMessage(date: Date) {
   return dailyMessages[dayNumber % dailyMessages.length];
 }
 
-function readCompleted(date: Date) {
+function exerciseStorageKey(date: Date, mode: WorkoutMode) {
+  const suffix = mode === "home" ? "-home" : "";
+  return `bloom-completed-${dateKey(date)}${suffix}`;
+}
+
+function readCompleted(date: Date, mode: WorkoutMode) {
   try {
-    const saved = window.localStorage.getItem(`bloom-completed-${dateKey(date)}`);
+    const saved = window.localStorage.getItem(exerciseStorageKey(date, mode));
     const parsed = saved ? (JSON.parse(saved) as unknown) : [];
     return Array.isArray(parsed) && parsed.every((item) => typeof item === "string")
       ? parsed
@@ -118,12 +128,31 @@ function readCompleted(date: Date) {
   }
 }
 
+function readCompletedDays() {
+  try {
+    const saved = window.localStorage.getItem(completedDaysStorageKey);
+    const parsed = saved ? (JSON.parse(saved) as unknown) : [];
+    return Array.isArray(parsed) && parsed.every((item) => typeof item === "string")
+      ? parsed
+      : [];
+  } catch {
+    return [];
+  }
+}
+
+function readWorkoutMode(): WorkoutMode {
+  return window.localStorage.getItem(workoutModeStorageKey) === "home"
+    ? "home"
+    : "gym";
+}
+
 function getSchedule(date: Date) {
   return plan.schedule[weekdayKeys[date.getDay()]];
 }
 
-function getWorkout(date: Date) {
-  return plan.workouts[getSchedule(date).workout];
+function getWorkout(date: Date, mode: WorkoutMode) {
+  const workouts = mode === "home" ? plan.homeWorkouts : plan.workouts;
+  return workouts[getSchedule(date).workout];
 }
 
 function getMonthGrid(month: Date) {
@@ -138,7 +167,8 @@ function getMonthGrid(month: Date) {
   });
 }
 
-function getYouTubeVideoId(videoUrl: string) {
+function getYouTubeVideoId(videoUrl?: string) {
+  if (!videoUrl) return null;
   try {
     const parsed = new URL(videoUrl);
     const id = parsed.searchParams.get("v");
@@ -156,7 +186,9 @@ export function WorkoutApp() {
   const [today, setToday] = useState<Date | null>(null);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [visibleMonth, setVisibleMonth] = useState<Date | null>(null);
+  const [workoutMode, setWorkoutMode] = useState<WorkoutMode>("gym");
   const [completed, setCompleted] = useState<string[]>([]);
+  const [completedDays, setCompletedDays] = useState<string[]>([]);
   const [showInstallTip, setShowInstallTip] = useState(false);
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
 
@@ -166,7 +198,10 @@ export function WorkoutApp() {
       setToday(localToday);
       setSelectedDate(localToday);
       setVisibleMonth(new Date(localToday.getFullYear(), localToday.getMonth(), 1));
-      setCompleted(readCompleted(localToday));
+      const savedMode = readWorkoutMode();
+      setWorkoutMode(savedMode);
+      setCompleted(readCompleted(localToday, savedMode));
+      setCompletedDays(readCompletedDays());
 
       const standalone = window.matchMedia("(display-mode: standalone)").matches;
       const ios = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
@@ -198,9 +233,10 @@ export function WorkoutApp() {
   }
 
   const schedule = getSchedule(selectedDate);
-  const workout = getWorkout(selectedDate);
+  const workout = getWorkout(selectedDate, workoutMode);
   const dailyMessage = getDailyMessage(selectedDate);
   const selectedIsToday = isSameDay(selectedDate, today);
+  const selectedDayCompleted = completedDays.includes(dateKey(selectedDate));
   const progress = workout.exercises.length
     ? Math.round((completed.length / workout.exercises.length) * 100)
     : 0;
@@ -208,7 +244,7 @@ export function WorkoutApp() {
   function selectDate(date: Date) {
     const next = startOfDay(date);
     setSelectedDate(next);
-    setCompleted(readCompleted(next));
+    setCompleted(readCompleted(next, workoutMode));
     setPlayingVideo(null);
     if (
       next.getMonth() !== visibleMonth!.getMonth() ||
@@ -216,6 +252,13 @@ export function WorkoutApp() {
     ) {
       setVisibleMonth(new Date(next.getFullYear(), next.getMonth(), 1));
     }
+  }
+
+  function changeWorkoutMode(mode: WorkoutMode) {
+    setWorkoutMode(mode);
+    setCompleted(readCompleted(selectedDate!, mode));
+    setPlayingVideo(null);
+    window.localStorage.setItem(workoutModeStorageKey, mode);
   }
 
   function changeMonth(amount: number) {
@@ -231,9 +274,18 @@ export function WorkoutApp() {
       : [...completed, id];
     setCompleted(next);
     window.localStorage.setItem(
-      `bloom-completed-${dateKey(selectedDate!)}`,
+      exerciseStorageKey(selectedDate!, workoutMode),
       JSON.stringify(next),
     );
+  }
+
+  function toggleDayComplete() {
+    const selectedKey = dateKey(selectedDate!);
+    const next = selectedDayCompleted
+      ? completedDays.filter((item) => item !== selectedKey)
+      : [...completedDays, selectedKey];
+    setCompletedDays(next);
+    window.localStorage.setItem(completedDaysStorageKey, JSON.stringify(next));
   }
 
   function dismissInstallTip() {
@@ -268,6 +320,31 @@ export function WorkoutApp() {
           </div>
         </aside>
       )}
+
+      <section className="plan-switcher" aria-labelledby="plan-switcher-label">
+        <div>
+          <p className="section-kicker">Pick your place</p>
+          <h2 id="plan-switcher-label">Where are we moving?</h2>
+        </div>
+        <div className="segmented-control" role="group" aria-label="Workout location">
+          <button
+            className={workoutMode === "gym" ? "active" : ""}
+            type="button"
+            onClick={() => changeWorkoutMode("gym")}
+            aria-pressed={workoutMode === "gym"}
+          >
+            Gym
+          </button>
+          <button
+            className={workoutMode === "home" ? "active" : ""}
+            type="button"
+            onClick={() => changeWorkoutMode("home")}
+            aria-pressed={workoutMode === "home"}
+          >
+            At home
+          </button>
+        </div>
+      </section>
 
       <section className={`hero hero-${workout.kind}`} id="today">
         <div className="hero-copy">
@@ -339,14 +416,15 @@ export function WorkoutApp() {
         </div>
         <div className="calendar-grid" role="grid" aria-label="Workout calendar">
           {monthDates.map((date) => {
-            const routine = getWorkout(date);
+            const routine = getWorkout(date, workoutMode);
             const outsideMonth = date.getMonth() !== visibleMonth.getMonth();
             const selected = isSameDay(date, selectedDate);
             const current = isSameDay(date, today);
+            const dayCompleted = completedDays.includes(dateKey(date));
             return (
               <button
                 key={dateKey(date)}
-                className={`calendar-day day-${routine.kind}${selected ? " selected" : ""}${current ? " current" : ""}${outsideMonth ? " outside" : ""}`}
+                className={`calendar-day day-${routine.kind}${selected ? " selected" : ""}${current ? " current" : ""}${outsideMonth ? " outside" : ""}${dayCompleted ? " completed-day" : ""}`}
                 type="button"
                 onClick={() => selectDate(date)}
                 role="gridcell"
@@ -355,10 +433,11 @@ export function WorkoutApp() {
                   month: "long",
                   day: "numeric",
                   year: "numeric",
-                })}: ${routine.title}${current ? ", today" : ""}`}
+                })}: ${routine.title}${current ? ", today" : ""}${dayCompleted ? ", completed" : ""}`}
               >
-                <span>{date.getDate()}</span>
+                <span className="day-number">{date.getDate()}</span>
                 <i aria-hidden="true" />
+                {dayCompleted && <span className="day-complete-mark" aria-hidden="true">✓</span>}
               </button>
             );
           })}
@@ -368,13 +447,16 @@ export function WorkoutApp() {
           <span><i className="legend-dot upper" />Upper</span>
           <span><i className="legend-dot cardio" />Cardio</span>
           <span><i className="legend-dot recovery" />Rest</span>
+          <span><i className="legend-check">✓</i>Done</span>
         </div>
       </section>
 
       <section className="routine-section" aria-labelledby="routine-heading">
         <div className="section-heading routine-heading">
           <div>
-            <p className="section-kicker">{schedule.label}</p>
+            <p className="section-kicker">
+              {schedule.label} · {workoutMode === "home" ? "At home" : "Gym"}
+            </p>
             <h2 id="routine-heading">{workout.shortTitle}</h2>
           </div>
           {workout.exercises.length > 0 && (
@@ -384,6 +466,26 @@ export function WorkoutApp() {
             </div>
           )}
         </div>
+
+        <button
+          className={`day-status-button${selectedDayCompleted ? " is-complete" : ""}`}
+          type="button"
+          onClick={toggleDayComplete}
+          aria-pressed={selectedDayCompleted}
+        >
+          <span className="day-status-icon" aria-hidden="true">✓</span>
+          <span className="day-status-copy">
+            <strong>{selectedDayCompleted ? "Day complete" : "Mark this day complete"}</strong>
+            <small>
+              {selectedDayCompleted
+                ? "Nice work. It’s saved on your calendar."
+                : "Tap when you’re done—it’ll stay checked on this device."}
+            </small>
+          </span>
+          <span className="day-status-action" aria-hidden="true">
+            {selectedDayCompleted ? "Undo" : "Done"}
+          </span>
+        </button>
 
         {workout.note && (
           <section className="routine-guidance" aria-label="Before you start">

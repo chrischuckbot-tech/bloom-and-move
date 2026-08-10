@@ -165,6 +165,60 @@ summary:focus-visible {
   cursor: pointer;
 }
 
+.plan-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--paper);
+  box-shadow: 0 8px 24px rgba(83, 52, 68, 0.07);
+}
+
+.plan-switcher .section-kicker {
+  margin-bottom: 3px;
+}
+
+.plan-switcher h2 {
+  margin: 0;
+  color: var(--deep-plum);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.segmented-control {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 0 0 auto;
+  padding: 3px;
+  border-radius: 14px;
+  background: #f1e9e5;
+}
+
+.segmented-control button {
+  min-width: 70px;
+  min-height: 36px;
+  padding: 7px 11px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.segmented-control button.active {
+  background: var(--paper);
+  color: var(--deep-plum);
+  box-shadow: 0 2px 8px rgba(83, 52, 68, 0.12);
+}
+
 .hero {
   position: relative;
   min-height: 292px;
@@ -403,7 +457,7 @@ summary:focus-visible {
   cursor: pointer;
 }
 
-.calendar-day span {
+.calendar-day .day-number {
   font-size: 13px;
   font-weight: 700;
 }
@@ -427,6 +481,31 @@ summary:focus-visible {
 .calendar-day.selected {
   background: var(--deep-plum);
   color: white;
+}
+
+.calendar-day.completed-day:not(.selected) {
+  background: #edf6f1;
+  color: #355b50;
+}
+
+.calendar-day .day-complete-mark {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  display: grid;
+  width: 13px;
+  height: 13px;
+  place-items: center;
+  border-radius: 50%;
+  background: #538978;
+  color: white;
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.calendar-day.selected .day-complete-mark {
+  background: var(--mint);
+  color: #355b50;
 }
 
 .calendar-day.day-lower i,
@@ -471,6 +550,18 @@ summary:focus-visible {
   border-radius: 50%;
 }
 
+.legend-check {
+  display: grid;
+  width: 12px;
+  height: 12px;
+  place-items: center;
+  border-radius: 50%;
+  background: #538978;
+  color: white;
+  font-size: 8px;
+  font-style: normal;
+}
+
 .routine-heading {
   align-items: center;
 }
@@ -496,8 +587,87 @@ summary:focus-visible {
   letter-spacing: 0;
 }
 
+.day-status-button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 18px;
+  padding: 12px;
+  border: 1px solid #e0d4ce;
+  border-radius: 18px;
+  background: #faf5f1;
+  color: var(--deep-plum);
+  text-align: left;
+  cursor: pointer;
+}
+
+.day-status-button:hover {
+  border-color: #cbbbc1;
+  background: #f8f0eb;
+}
+
+.day-status-button.is-complete {
+  border-color: #b7d9c9;
+  background: #edf6f1;
+  color: #315a4d;
+}
+
+.day-status-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #d9cac3;
+  border-radius: 50%;
+  background: var(--paper);
+  color: #ad9b9f;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.is-complete .day-status-icon {
+  border-color: #538978;
+  background: #538978;
+  color: white;
+}
+
+.day-status-copy {
+  min-width: 0;
+}
+
+.day-status-copy strong,
+.day-status-copy small {
+  display: block;
+}
+
+.day-status-copy strong {
+  margin-bottom: 2px;
+  font-size: 13px;
+}
+
+.day-status-copy small {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.day-status-action {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--plum);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.is-complete .day-status-action {
+  color: #477566;
+}
+
 .routine-guidance {
-  margin: -5px 0 18px;
+  margin: 0 0 18px;
   padding: 0 0 18px;
   border-bottom: 1px solid var(--line);
 }
@@ -779,7 +949,7 @@ footer small {
     gap: 7px;
   }
 
-  .calendar-day span {
+  .calendar-day .day-number {
     font-size: 14px;
   }
 
@@ -801,6 +971,18 @@ footer small {
   .exercise-card p,
   .video-button {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 460px) {
+  .plan-switcher {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .segmented-control {
+    width: 100%;
   }
 }
 
