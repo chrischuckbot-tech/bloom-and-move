@@ -35,8 +35,22 @@ test("exports a GitHub Pages-ready workout app", async () => {
   assert.equal(parsedWorkouts.workouts.cardio.exercises[0].name, "Jumping Jack Warm-Up");
   assert.ok(
     parsedWorkouts.workouts.cardio.exercises.some(
-      (exercise) => exercise.name === "Step-Back Burpee",
+      (exercise) =>
+        exercise.name === "Burpee (No Push-Up)" &&
+        exercise.video === "https://www.youtube.com/watch?v=CqJ947Bj2Zg",
     ),
+  );
+  assert.equal(
+    parsedWorkouts.workouts.cardio.exercises.find(
+      (exercise) => exercise.name === "Squat to Knee Drive",
+    ).video,
+    "https://www.youtube.com/watch?v=H7CoLUKTjbg",
+  );
+  assert.equal(
+    parsedWorkouts.workouts.cardio.exercises.find(
+      (exercise) => exercise.name === "Plank Shoulder Tap",
+    ).video,
+    "https://www.youtube.com/watch?v=QOCn3_iOAro",
   );
   assert.equal(parsedWorkouts.schedule.friday.label, "Day 5");
   assert.equal(parsedWorkouts.workouts.lower.exercises.length, 6);
@@ -44,7 +58,7 @@ test("exports a GitHub Pages-ready workout app", async () => {
   assert.match(parsedWorkouts.workouts.upper.note, /2 reps in reserve \(RIR\)/i);
   assert.equal(parsedWorkouts.homeWorkouts.lower.title, "At-Home Legs + Cardio");
   assert.equal(parsedWorkouts.homeWorkouts.lower.exercises.length, 6);
-  assert.equal(parsedWorkouts.homeWorkouts.upper.exercises.length, 6);
+  assert.equal(parsedWorkouts.homeWorkouts.upper.exercises.length, 7);
   assert.equal(parsedWorkouts.homeWorkouts.cardio.duration, "About 30 min");
   assert.equal(parsedWorkouts.homeWorkouts.cardio.exercises.length, 5);
   assert.match(parsedWorkouts.homeWorkouts.lower.note, /no equipment needed/i);
@@ -70,8 +84,22 @@ test("exports a GitHub Pages-ready workout app", async () => {
   );
   assert.ok(
     parsedWorkouts.homeWorkouts.cardio.exercises.some(
-      (exercise) => exercise.name === "Step-Back Burpee",
+      (exercise) =>
+        exercise.name === "Burpee (No Push-Up)" &&
+        exercise.video === "https://www.youtube.com/watch?v=CqJ947Bj2Zg",
     ),
+  );
+  assert.equal(
+    parsedWorkouts.homeWorkouts.cardio.exercises.find(
+      (exercise) => exercise.name === "Squat to Knee Drive",
+    ).video,
+    "https://www.youtube.com/watch?v=H7CoLUKTjbg",
+  );
+  assert.equal(
+    parsedWorkouts.homeWorkouts.cardio.exercises.find(
+      (exercise) => exercise.name === "Plank Shoulder Tap",
+    ).video,
+    "https://www.youtube.com/watch?v=QOCn3_iOAro",
   );
   assert.ok(
     parsedWorkouts.homeWorkouts.lower.exercises.some(
@@ -79,9 +107,38 @@ test("exports a GitHub Pages-ready workout app", async () => {
     ),
   );
   assert.ok(
+    parsedWorkouts.homeWorkouts.lower.exercises.some(
+      (exercise) => exercise.name === "Reverse Lunge",
+    ),
+  );
+  assert.equal(
+    parsedWorkouts.homeWorkouts.lower.exercises.find(
+      (exercise) => exercise.name === "Single-Leg Glute Bridge",
+    ).prescription,
+    "3 × 10 each side",
+  );
+  assert.equal(
+    parsedWorkouts.homeWorkouts.lower.exercises.some(
+      (exercise) => /supported reverse lunge/i.test(exercise.name),
+    ),
+    false,
+  );
+  assert.ok(
     parsedWorkouts.homeWorkouts.upper.exercises.some(
       (exercise) => /back/i.test(exercise.name),
     ),
+  );
+  assert.equal(
+    parsedWorkouts.homeWorkouts.upper.exercises.find(
+      (exercise) => exercise.name === "Floor Lat Slides",
+    ).video,
+    "https://www.youtube.com/watch?v=jtskZxMzZL8",
+  );
+  assert.equal(
+    parsedWorkouts.homeWorkouts.upper.exercises.find(
+      (exercise) => exercise.name === "Forearm Plank",
+    ).prescription,
+    "2 × max hold",
   );
   assert.equal(
     Object.values(parsedWorkouts.homeWorkouts)

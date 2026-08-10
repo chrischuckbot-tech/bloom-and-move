@@ -129,18 +129,18 @@
           "videoLabel": "Watch PureGym form guide"
         },
         {
-          "name": "Step-Back Burpee",
+          "name": "Burpee (No Push-Up)",
           "prescription": "4 rounds × 40 sec",
-          "details": "Plant your hands, step or hop both feet back to a strong plank, bring your feet in, and stand tall. Add a small jump only if you can land softly and keep the same clean rhythm.",
-          "video": "https://www.youtube.com/watch?v=4bkOIruGAho",
-          "videoLabel": "Watch beginner burpee form"
+          "details": "Squat down and plant your hands, jump both feet back into a strong high plank, immediately hop your feet forward, then jump straight up with your hands overhead. Keep your arms straight in the plank—there is no push-up.",
+          "video": "https://www.youtube.com/watch?v=CqJ947Bj2Zg",
+          "videoLabel": "Watch the no-push-up burpee"
         },
         {
           "name": "Squat to Knee Drive",
           "prescription": "4 rounds × 40 sec",
           "details": "Sit into a controlled squat, stand, and drive one knee toward your chest. Alternate knees each rep and keep your standing foot planted firmly.",
-          "video": "https://www.youtube.com/watch?v=l83R5PblSMA",
-          "videoLabel": "Watch PureGym squat form"
+          "video": "https://www.youtube.com/watch?v=H7CoLUKTjbg",
+          "videoLabel": "Watch squat-to-knee-drive technique"
         },
         {
           "name": "Jumping Jacks",
@@ -152,9 +152,9 @@
         {
           "name": "Plank Shoulder Tap",
           "prescription": "4 rounds × 40 sec",
-          "details": "From your knees or toes, brace your core and tap the opposite shoulder without rocking your hips. Slow, controlled taps beat rushed reps.",
-          "video": "https://www.youtube.com/watch?v=NFhlVlMYi14",
-          "videoLabel": "Watch health provider form guide"
+          "details": "Start in a high plank from your toes with your hands under your shoulders and feet set wide for stability. Brace your core and tap the opposite shoulder without rocking your hips. Slow, controlled taps beat rushed reps.",
+          "video": "https://www.youtube.com/watch?v=QOCn3_iOAro",
+          "videoLabel": "Watch high-plank shoulder-tap form"
         }
       ]
     },
@@ -174,7 +174,7 @@
       "focus": "Bodyweight leg strength and hip stability after a quick indoor warm-up.",
       "duration": "About 40 min",
       "kind": "lower",
-      "note": "No equipment needed. Start with the 5-minute jumping-jack warm-up. Rest 45–75 seconds between strength sets, use a wall or chair for balance, and stop each set while your form still feels clean.",
+      "note": "No equipment needed. Start with the 5-minute jumping-jack warm-up. Rest 45–75 seconds between strength sets and stop each set while your form still feels clean.",
       "exercises": [
         {
           "name": "Jumping Jack Warm-Up",
@@ -191,16 +191,16 @@
           "videoLabel": "Watch PureGym squat form"
         },
         {
-          "name": "Glute Bridge",
-          "prescription": "3 × 12–15",
-          "details": "Lie on your back with knees bent. Press through your heels, squeeze your glutes, and lift until your hips and ribs form one line without arching your back.",
-          "video": "https://www.youtube.com/watch?v=tqp5XQPpTxY",
-          "videoLabel": "Watch PureGym form guide"
+          "name": "Single-Leg Glute Bridge",
+          "prescription": "3 × 10 each side",
+          "details": "Lie on your back with one knee bent and the other leg extended. Press through the planted heel, squeeze that glute, and lift while keeping your hips level. Lower with control and complete both sides.",
+          "video": "https://www.youtube.com/watch?v=2sg3vqnE8qE",
+          "videoLabel": "Watch single-leg glute bridge form"
         },
         {
-          "name": "Supported Reverse Lunge",
+          "name": "Reverse Lunge",
           "prescription": "3 × 8 each side",
-          "details": "Hold a wall or sturdy chair, step one foot back, and lower only as far as feels controlled. Keep the front knee tracking over the middle toes.",
+          "details": "Stand tall, step one foot back, and lower both knees with control. Keep your front knee tracking over your middle toes, then press through your front foot to return to standing.",
           "video": "https://www.youtube.com/watch?v=xrPteyQLGAo",
           "videoLabel": "Watch PureGym lunge form"
         },
@@ -224,9 +224,9 @@
       "title": "At-Home Upper Body + Cardio",
       "shortTitle": "Upper body at home",
       "focus": "Back, chest, shoulders, and core after a quick indoor warm-up.",
-      "duration": "About 35 min",
+      "duration": "About 40 min",
       "kind": "upper",
-      "note": "No equipment needed. Start with the 5-minute jumping-jack warm-up. Choose a wall, counter, or couch arm that makes the push-ups feel smooth, rest 45–75 seconds between sets, and leave about 2 clean reps in reserve.",
+      "note": "No workout equipment needed. Start with the 5-minute jumping-jack warm-up and grab a folded towel for the floor lat slides. Choose a wall, counter, or couch arm that makes the push-ups feel smooth, rest 45–75 seconds between sets, and leave about 2 clean reps in reserve.",
       "exercises": [
         {
           "name": "Jumping Jack Warm-Up",
@@ -250,6 +250,13 @@
           "videoLabel": "Watch PureGym back exercise form"
         },
         {
+          "name": "Floor Lat Slides",
+          "prescription": "3 × 8–12",
+          "details": "On a smooth floor, kneel with a folded towel under your knees and start on all fours. Brace your core, slide your knees backward as your arms reach long, then pull your body forward using your lats. Keep your shoulders away from your ears and do not let your lower back sag.",
+          "video": "https://www.youtube.com/watch?v=jtskZxMzZL8",
+          "videoLabel": "Watch floor lat slide form"
+        },
+        {
           "name": "Kneeling Shoulder Tap",
           "prescription": "3 × 8 each side",
           "details": "From hands and knees, brace your core and tap the opposite shoulder without letting your hips twist. Move slowly.",
@@ -265,8 +272,8 @@
         },
         {
           "name": "Forearm Plank",
-          "prescription": "3 × 20–30 sec",
-          "details": "Use your knees or toes. Keep elbows under shoulders, brace your middle, squeeze your glutes, and breathe steadily.",
+          "prescription": "2 × max hold",
+          "details": "Hold from your toes for as long as you can keep clean form. Keep your elbows under your shoulders, brace your middle, squeeze your glutes, and breathe steadily. Stop when your hips begin to sag or rise, then rest 60–90 seconds before the second hold.",
           "video": "https://www.youtube.com/watch?v=q4rDeHYMcIg",
           "videoLabel": "Watch PureGym form guide"
         }
@@ -288,18 +295,18 @@
           "videoLabel": "Watch PureGym form guide"
         },
         {
-          "name": "Step-Back Burpee",
+          "name": "Burpee (No Push-Up)",
           "prescription": "4 rounds × 40 sec",
-          "details": "Plant your hands, step or hop both feet back to a strong plank, bring your feet in, and stand tall. Add a small jump only if you can land softly and keep the same clean rhythm.",
-          "video": "https://www.youtube.com/watch?v=4bkOIruGAho",
-          "videoLabel": "Watch beginner burpee form"
+          "details": "Squat down and plant your hands, jump both feet back into a strong high plank, immediately hop your feet forward, then jump straight up with your hands overhead. Keep your arms straight in the plank—there is no push-up.",
+          "video": "https://www.youtube.com/watch?v=CqJ947Bj2Zg",
+          "videoLabel": "Watch the no-push-up burpee"
         },
         {
           "name": "Squat to Knee Drive",
           "prescription": "4 rounds × 40 sec",
           "details": "Sit into a controlled squat, stand, and drive one knee toward your chest. Alternate knees each rep and keep your standing foot planted firmly.",
-          "video": "https://www.youtube.com/watch?v=l83R5PblSMA",
-          "videoLabel": "Watch PureGym squat form"
+          "video": "https://www.youtube.com/watch?v=H7CoLUKTjbg",
+          "videoLabel": "Watch squat-to-knee-drive technique"
         },
         {
           "name": "Jumping Jacks",
@@ -311,9 +318,9 @@
         {
           "name": "Plank Shoulder Tap",
           "prescription": "4 rounds × 40 sec",
-          "details": "From your knees or toes, brace your core and tap the opposite shoulder without rocking your hips. Slow, controlled taps beat rushed reps.",
-          "video": "https://www.youtube.com/watch?v=NFhlVlMYi14",
-          "videoLabel": "Watch health provider form guide"
+          "details": "Start in a high plank from your toes with your hands under your shoulders and feet set wide for stability. Brace your core and tap the opposite shoulder without rocking your hips. Slow, controlled taps beat rushed reps.",
+          "video": "https://www.youtube.com/watch?v=QOCn3_iOAro",
+          "videoLabel": "Watch high-plank shoulder-tap form"
         }
       ]
     },
