@@ -40,11 +40,45 @@ test("exports a GitHub Pages-ready workout app", async () => {
   assert.equal(parsedWorkouts.homeWorkouts.lower.title, "At-Home Legs + Cardio");
   assert.equal(parsedWorkouts.homeWorkouts.lower.exercises.length, 6);
   assert.equal(parsedWorkouts.homeWorkouts.upper.exercises.length, 6);
-  assert.equal(parsedWorkouts.homeWorkouts.cardio.duration, "30 min");
+  assert.equal(parsedWorkouts.homeWorkouts.cardio.duration, "About 30 min");
+  assert.equal(parsedWorkouts.homeWorkouts.cardio.exercises.length, 4);
   assert.match(parsedWorkouts.homeWorkouts.lower.note, /no equipment needed/i);
-  assert.match(
-    parsedWorkouts.homeWorkouts.cardio.exercises[0].details,
-    /marching or jogging in place/i,
+  assert.ok(
+    Object.values(parsedWorkouts.homeWorkouts).every(
+      (workout) =>
+        workout.exercises.length === 0 ||
+        workout.exercises[0].name === "Jog Around the Block",
+    ),
+  );
+  assert.ok(
+    Object.values(parsedWorkouts.homeWorkouts)
+      .flatMap((workout) => workout.exercises)
+      .every(
+        (exercise) =>
+          /^https:\/\/www\.youtube\.com\/watch\?v=/.test(exercise.video) &&
+          exercise.videoLabel.length > 0,
+      ),
+  );
+  assert.ok(
+    parsedWorkouts.homeWorkouts.cardio.exercises.some(
+      (exercise) => exercise.name === "Step-Back Burpee",
+    ),
+  );
+  assert.ok(
+    parsedWorkouts.homeWorkouts.lower.exercises.some(
+      (exercise) => exercise.name === "Bodyweight Squat",
+    ),
+  );
+  assert.ok(
+    parsedWorkouts.homeWorkouts.upper.exercises.some(
+      (exercise) => /back/i.test(exercise.name),
+    ),
+  );
+  assert.equal(
+    Object.values(parsedWorkouts.homeWorkouts)
+      .flatMap((workout) => workout.exercises)
+      .some((exercise) => /shadowbox/i.test(exercise.name)),
+    false,
   );
   assert.equal("intensity" in parsedWorkouts, false);
   assert.equal("tips" in parsedWorkouts, false);
