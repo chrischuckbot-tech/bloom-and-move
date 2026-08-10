@@ -57,31 +57,31 @@ const dailyMessages = [
     footer: "Working out now so you can have my babies later ♡",
   },
   {
-    loveNote: "Getting strong so I can put a baby in you someday ♡",
+    loveNote: "Getting strong so I can put a baby in you someday",
     footer: "Every rep makes you even harder to keep my hands off. ♡",
   },
   {
-    loveNote: "Save those sweaty panties for me—I want to smell how hard you worked. ♡",
+    loveNote: "Save those sweaty panties for me—I want to smell how hard you worked.",
     footer: "Strong legs, filthy thoughts, perfect combination. ♡",
   },
   {
-    loveNote: "Sweat now. I’ll help you cool down later. ♡",
+    loveNote: "Sweat now. I’ll help you cool down later.",
     footer: "Training for the kind of cardio we actually enjoy. ♡",
   },
   {
-    loveNote: "Build that stamina—I’ve got plans for it. ♡",
+    loveNote: "Build that stamina—I’ve got plans for it.",
     footer: "Get strong, stay sexy, come home to me. ♡",
   },
   {
-    loveNote: "I love watching you get hot and out of breath. ♡",
+    loveNote: "I love watching you get hot and out of breath.",
     footer: "Sweat looks ridiculously good on you. ♡",
   },
   {
-    loveNote: "One more rep, then come collect your reward. ♡",
+    loveNote: "One more rep, then come collect your reward.",
     footer: "Future mama in training—lucky me. ♡",
   },
   {
-    loveNote: "Tonight you have 3 sets of bouncing on it crazy style. ♡",
+    loveNote: "Tonight you have 3 sets of bouncing on it crazy style.",
     footer: "Your favorite workout starts after this one. ♡",
   },
 ] as const;
@@ -369,7 +369,7 @@ export function WorkoutApp() {
       </section>
 
       <aside className="love-note" aria-label="A little love note">
-        <span aria-hidden="true">♡</span>
+        <span className="love-note-heart" aria-hidden="true">♡</span>
         <p>{dailyMessage.loveNote}</p>
       </aside>
 
