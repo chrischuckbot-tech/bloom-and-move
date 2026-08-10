@@ -10,7 +10,7 @@ Edit [`public/workouts.json`](public/workouts.json). The important pieces are:
 - `workouts`: gym titles, exercises, sets/reps, cues, and YouTube links
 - `homeWorkouts`: no-equipment bodyweight and cardio alternatives
 
-The calendar uses the normal Sunday-to-Saturday layout. Workout Day 1 is always Monday: lower body Monday, upper body Tuesday, an indoor cardio circuit Wednesday, lower body Thursday, and upper body Friday.
+The calendar uses the normal Sunday-to-Saturday layout. Workout Day 1 is always Monday: lower body Monday, upper body Tuesday, a treadmill run/jog at the gym or indoor cardio circuit at home on Wednesday, lower body Thursday, and upper body Friday.
 
 Workout location, exercise progress, and completed days are saved locally on the device. The app has no account or cloud sync.
 

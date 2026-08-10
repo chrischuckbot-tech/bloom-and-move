@@ -30,27 +30,13 @@ test("exports a GitHub Pages-ready workout app", async () => {
   const parsedWorkouts = JSON.parse(workouts);
   assert.equal(parsedWorkouts.schedule.monday.label, "Day 1");
   assert.equal(parsedWorkouts.schedule.wednesday.workout, "cardio");
-  assert.equal(parsedWorkouts.workouts.cardio.title, "Indoor Cardio Circuit");
-  assert.equal(parsedWorkouts.workouts.cardio.duration, "About 30 min");
-  assert.equal(parsedWorkouts.workouts.cardio.exercises[0].name, "Jumping Jack Warm-Up");
-  assert.ok(
-    parsedWorkouts.workouts.cardio.exercises.some(
-      (exercise) =>
-        exercise.name === "Burpee (No Push-Up)" &&
-        exercise.video === "https://www.youtube.com/watch?v=CqJ947Bj2Zg",
-    ),
-  );
+  assert.equal(parsedWorkouts.workouts.cardio.title, "30-Minute Treadmill Run/Jog");
+  assert.equal(parsedWorkouts.workouts.cardio.duration, "30 min");
+  assert.equal(parsedWorkouts.workouts.cardio.exercises.length, 1);
+  assert.equal(parsedWorkouts.workouts.cardio.exercises[0].name, "Treadmill Run/Jog");
   assert.equal(
-    parsedWorkouts.workouts.cardio.exercises.find(
-      (exercise) => exercise.name === "Jump Squats",
-    ).video,
-    "https://www.youtube.com/watch?v=BRfxI2Es2lE",
-  );
-  assert.equal(
-    parsedWorkouts.workouts.cardio.exercises.find(
-      (exercise) => exercise.name === "Plank Shoulder Tap",
-    ).video,
-    "https://www.youtube.com/watch?v=QOCn3_iOAro",
+    parsedWorkouts.workouts.cardio.exercises[0].video,
+    "https://www.youtube.com/watch?v=kHD1NaSdwzI",
   );
   assert.equal(parsedWorkouts.schedule.friday.label, "Day 5");
   assert.equal(parsedWorkouts.workouts.lower.exercises.length, 6);

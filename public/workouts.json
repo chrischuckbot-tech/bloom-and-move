@@ -114,47 +114,19 @@
       ]
     },
     "cardio": {
-      "title": "Indoor Cardio Circuit",
-      "shortTitle": "Cardio circuit",
-      "focus": "Full-body conditioning with burpees, squats, jumping jacks, and core work.",
-      "duration": "About 30 min",
+      "title": "30-Minute Treadmill Run/Jog",
+      "shortTitle": "Treadmill run",
+      "focus": "A steady indoor run or jog to build midweek endurance.",
+      "duration": "30 min",
       "kind": "cardio",
-      "note": "Everything happens indoors with no equipment needed. After the warm-up, do 40 seconds of each circuit move with 20 seconds to transition. Complete four rounds, rest 60 seconds between rounds, then finish with 3 minutes of easy marching and stretching.",
+      "note": "Keep the treadmill at a 0.5–1% incline and choose a jogging pace you can sustain without gasping. Slow down whenever your form gets sloppy; the goal is steady work, not an all-out effort.",
       "exercises": [
         {
-          "name": "Jumping Jack Warm-Up",
-          "prescription": "5 min warm-up",
-          "details": "Alternate 30 seconds of easy jumping jacks with 30 seconds of marching in place for five rounds. Keep your knees soft and land quietly; step side to side instead of jumping for a lower-impact option.",
-          "video": "https://www.youtube.com/watch?v=ttVmvj88Zwc",
-          "videoLabel": "Watch PureGym form guide"
-        },
-        {
-          "name": "Burpee (No Push-Up)",
-          "prescription": "4 rounds × 40 sec",
-          "details": "Squat down and plant your hands, jump both feet back into a strong high plank, immediately hop your feet forward, then jump straight up with your hands overhead. Keep your arms straight in the plank—there is no push-up.",
-          "video": "https://www.youtube.com/watch?v=CqJ947Bj2Zg",
-          "videoLabel": "Watch the no-push-up burpee"
-        },
-        {
-          "name": "Jump Squats",
-          "prescription": "4 rounds × 40 sec",
-          "details": "Lower into a controlled squat, drive through your feet, and jump straight up. Land quietly with soft knees and flow into the next rep only after you feel balanced.",
-          "video": "https://www.youtube.com/watch?v=BRfxI2Es2lE",
-          "videoLabel": "Watch PureGym jump-squat form"
-        },
-        {
-          "name": "Jumping Jacks",
-          "prescription": "4 rounds × 40 sec",
-          "details": "Keep a steady pace you can hold through every round. Land quietly with soft knees, or step one foot out at a time while reaching overhead.",
-          "video": "https://www.youtube.com/watch?v=ttVmvj88Zwc",
-          "videoLabel": "Watch PureGym form guide"
-        },
-        {
-          "name": "Plank Shoulder Tap",
-          "prescription": "4 rounds × 40 sec",
-          "details": "Start in a high plank from your toes with your hands under your shoulders and feet set wide for stability. Brace your core and tap the opposite shoulder without rocking your hips. Slow, controlled taps beat rushed reps.",
-          "video": "https://www.youtube.com/watch?v=QOCn3_iOAro",
-          "videoLabel": "Watch high-plank shoulder-tap form"
+          "name": "Treadmill Run/Jog",
+          "prescription": "30 min",
+          "details": "Warm up with a 5-minute brisk walk. Run or jog at a steady, conversational effort for 20 minutes, then cool down with a 5-minute easy walk. If needed, briefly reduce the speed to recover before returning to your jog.",
+          "video": "https://www.youtube.com/watch?v=kHD1NaSdwzI",
+          "videoLabel": "Watch treadmill running form"
         }
       ]
     },
