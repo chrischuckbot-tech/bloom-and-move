@@ -114,19 +114,47 @@
       ]
     },
     "cardio": {
-      "title": "30-Minute Walk-Run",
-      "shortTitle": "Walk-run day",
-      "focus": "A simple midweek walk-run to build endurance at a comfortable pace.",
-      "duration": "30 min",
+      "title": "Indoor Cardio Circuit",
+      "shortTitle": "Cardio circuit",
+      "focus": "Full-body conditioning with burpees, squats, jumping jacks, and core work.",
+      "duration": "About 30 min",
       "kind": "cardio",
-      "note": "Use a treadmill or a flat, predictable outdoor route. Keep the running intervals easy enough that you could say a short sentence.",
+      "note": "Everything happens indoors with no equipment needed. After the warm-up, do 40 seconds of each circuit move with 20 seconds to transition. Complete four rounds, rest 60 seconds between rounds, then finish with 3 minutes of easy marching and stretching.",
       "exercises": [
         {
-          "name": "Walk-Run Intervals",
-          "prescription": "30 min",
-          "details": "Walk for 5 minutes to warm up. Then alternate 1 minute of easy running with 2 minutes of brisk walking for 20 minutes. Finish with a 5-minute easy walk.",
-          "video": "https://www.youtube.com/watch?v=38vUyIo69ww",
-          "videoLabel": "Watch treadmill walking form"
+          "name": "Jumping Jack Warm-Up",
+          "prescription": "5 min warm-up",
+          "details": "Alternate 30 seconds of easy jumping jacks with 30 seconds of marching in place for five rounds. Keep your knees soft and land quietly; step side to side instead of jumping for a lower-impact option.",
+          "video": "https://www.youtube.com/watch?v=ttVmvj88Zwc",
+          "videoLabel": "Watch PureGym form guide"
+        },
+        {
+          "name": "Step-Back Burpee",
+          "prescription": "4 rounds × 40 sec",
+          "details": "Plant your hands, step or hop both feet back to a strong plank, bring your feet in, and stand tall. Add a small jump only if you can land softly and keep the same clean rhythm.",
+          "video": "https://www.youtube.com/watch?v=4bkOIruGAho",
+          "videoLabel": "Watch beginner burpee form"
+        },
+        {
+          "name": "Squat to Knee Drive",
+          "prescription": "4 rounds × 40 sec",
+          "details": "Sit into a controlled squat, stand, and drive one knee toward your chest. Alternate knees each rep and keep your standing foot planted firmly.",
+          "video": "https://www.youtube.com/watch?v=l83R5PblSMA",
+          "videoLabel": "Watch PureGym squat form"
+        },
+        {
+          "name": "Jumping Jacks",
+          "prescription": "4 rounds × 40 sec",
+          "details": "Keep a steady pace you can hold through every round. Land quietly with soft knees, or step one foot out at a time while reaching overhead.",
+          "video": "https://www.youtube.com/watch?v=ttVmvj88Zwc",
+          "videoLabel": "Watch PureGym form guide"
+        },
+        {
+          "name": "Plank Shoulder Tap",
+          "prescription": "4 rounds × 40 sec",
+          "details": "From your knees or toes, brace your core and tap the opposite shoulder without rocking your hips. Slow, controlled taps beat rushed reps.",
+          "video": "https://www.youtube.com/watch?v=NFhlVlMYi14",
+          "videoLabel": "Watch health provider form guide"
         }
       ]
     },
@@ -143,17 +171,17 @@
     "lower": {
       "title": "At-Home Legs + Cardio",
       "shortTitle": "Legs at home",
-      "focus": "Bodyweight leg strength, hip stability, and an easy outdoor warm-up.",
-      "duration": "About 45 min",
+      "focus": "Bodyweight leg strength and hip stability after a quick indoor warm-up.",
+      "duration": "About 40 min",
       "kind": "lower",
-      "note": "No equipment needed. Start with the 10-minute jog at an easy, conversational pace—walking breaks count. Rest 45–75 seconds between strength sets, use a wall or chair for balance, and stop each set while your form still feels clean.",
+      "note": "No equipment needed. Start with the 5-minute jumping-jack warm-up. Rest 45–75 seconds between strength sets, use a wall or chair for balance, and stop each set while your form still feels clean.",
       "exercises": [
         {
-          "name": "Jog Around the Block",
-          "prescription": "10 min warm-up",
-          "details": "Jog an easy loop around the block at a pace where you could talk in short sentences. Walk for 30–60 seconds whenever you need to, then ease back into the jog.",
-          "video": "https://www.youtube.com/watch?v=97rfdzASzvI",
-          "videoLabel": "Watch beginner running form"
+          "name": "Jumping Jack Warm-Up",
+          "prescription": "5 min warm-up",
+          "details": "Alternate 30 seconds of easy jumping jacks with 30 seconds of marching in place for five rounds. Keep your knees soft and land quietly; step side to side instead of jumping for a lower-impact option.",
+          "video": "https://www.youtube.com/watch?v=ttVmvj88Zwc",
+          "videoLabel": "Watch PureGym form guide"
         },
         {
           "name": "Bodyweight Squat",
@@ -193,19 +221,19 @@
       ]
     },
     "upper": {
-      "title": "At-Home Upper Body + Jog",
+      "title": "At-Home Upper Body + Cardio",
       "shortTitle": "Upper body at home",
-      "focus": "Back, chest, shoulders, and core after an easy outdoor warm-up.",
-      "duration": "About 40 min",
+      "focus": "Back, chest, shoulders, and core after a quick indoor warm-up.",
+      "duration": "About 35 min",
       "kind": "upper",
-      "note": "No equipment needed. Start with the 10-minute jog at an easy, conversational pace—walking breaks count. Choose a wall, counter, or couch arm that makes the push-ups feel smooth, rest 45–75 seconds between sets, and leave about 2 clean reps in reserve.",
+      "note": "No equipment needed. Start with the 5-minute jumping-jack warm-up. Choose a wall, counter, or couch arm that makes the push-ups feel smooth, rest 45–75 seconds between sets, and leave about 2 clean reps in reserve.",
       "exercises": [
         {
-          "name": "Jog Around the Block",
-          "prescription": "10 min warm-up",
-          "details": "Jog an easy loop around the block at a pace where you could talk in short sentences. Walk for 30–60 seconds whenever you need to, then ease back into the jog.",
-          "video": "https://www.youtube.com/watch?v=97rfdzASzvI",
-          "videoLabel": "Watch beginner running form"
+          "name": "Jumping Jack Warm-Up",
+          "prescription": "5 min warm-up",
+          "details": "Alternate 30 seconds of easy jumping jacks with 30 seconds of marching in place for five rounds. Keep your knees soft and land quietly; step side to side instead of jumping for a lower-impact option.",
+          "video": "https://www.youtube.com/watch?v=ttVmvj88Zwc",
+          "videoLabel": "Watch PureGym form guide"
         },
         {
           "name": "Incline Push-Up",
@@ -247,38 +275,45 @@
     "cardio": {
       "title": "At-Home Cardio Circuit",
       "shortTitle": "Cardio at home",
-      "focus": "An easy jog followed by squats, beginner burpees, and jumping jacks.",
+      "focus": "Full-body conditioning with burpees, squats, jumping jacks, and core work.",
       "duration": "About 30 min",
       "kind": "cardio",
-      "note": "After the jog, complete four rounds of the three circuit moves and rest 45–60 seconds between rounds. Step instead of jump whenever you want a lower-impact option. Finish with a 5-minute easy walk.",
+      "note": "Everything happens indoors with no equipment needed. After the warm-up, do 40 seconds of each circuit move with 20 seconds to transition. Complete four rounds, rest 60 seconds between rounds, then finish with 3 minutes of easy marching and stretching.",
       "exercises": [
         {
-          "name": "Jog Around the Block",
-          "prescription": "10 min warm-up",
-          "details": "Jog an easy loop around the block at a pace where you could talk in short sentences. Walk for 30–60 seconds whenever you need to, then ease back into the jog.",
-          "video": "https://www.youtube.com/watch?v=97rfdzASzvI",
-          "videoLabel": "Watch beginner running form"
-        },
-        {
-          "name": "Bodyweight Squat",
-          "prescription": "4 rounds × 12",
-          "details": "Stand with your feet about shoulder-width apart, sit your hips down and back, and keep your knees tracking over your middle toes. Press through your whole foot to stand.",
-          "video": "https://www.youtube.com/watch?v=l83R5PblSMA",
-          "videoLabel": "Watch PureGym squat form"
+          "name": "Jumping Jack Warm-Up",
+          "prescription": "5 min warm-up",
+          "details": "Alternate 30 seconds of easy jumping jacks with 30 seconds of marching in place for five rounds. Keep your knees soft and land quietly; step side to side instead of jumping for a lower-impact option.",
+          "video": "https://www.youtube.com/watch?v=ttVmvj88Zwc",
+          "videoLabel": "Watch PureGym form guide"
         },
         {
           "name": "Step-Back Burpee",
-          "prescription": "4 rounds × 6–8",
-          "details": "From standing, plant your hands, step one foot and then the other back to a plank, step both feet in, and stand tall. Keep it low-impact; add the jump only when the step-back version feels smooth.",
+          "prescription": "4 rounds × 40 sec",
+          "details": "Plant your hands, step or hop both feet back to a strong plank, bring your feet in, and stand tall. Add a small jump only if you can land softly and keep the same clean rhythm.",
           "video": "https://www.youtube.com/watch?v=4bkOIruGAho",
           "videoLabel": "Watch beginner burpee form"
         },
         {
+          "name": "Squat to Knee Drive",
+          "prescription": "4 rounds × 40 sec",
+          "details": "Sit into a controlled squat, stand, and drive one knee toward your chest. Alternate knees each rep and keep your standing foot planted firmly.",
+          "video": "https://www.youtube.com/watch?v=l83R5PblSMA",
+          "videoLabel": "Watch PureGym squat form"
+        },
+        {
           "name": "Jumping Jacks",
-          "prescription": "4 rounds × 30 sec",
-          "details": "Keep your knees soft and land quietly. For a low-impact version, step one foot out at a time while reaching your arms overhead. After round four, cool down with a 5-minute easy walk.",
+          "prescription": "4 rounds × 40 sec",
+          "details": "Keep a steady pace you can hold through every round. Land quietly with soft knees, or step one foot out at a time while reaching overhead.",
           "video": "https://www.youtube.com/watch?v=ttVmvj88Zwc",
           "videoLabel": "Watch PureGym form guide"
+        },
+        {
+          "name": "Plank Shoulder Tap",
+          "prescription": "4 rounds × 40 sec",
+          "details": "From your knees or toes, brace your core and tap the opposite shoulder without rocking your hips. Slow, controlled taps beat rushed reps.",
+          "video": "https://www.youtube.com/watch?v=NFhlVlMYi14",
+          "videoLabel": "Watch health provider form guide"
         }
       ]
     },

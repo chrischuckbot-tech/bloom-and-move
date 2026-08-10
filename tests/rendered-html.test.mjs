@@ -30,9 +30,14 @@ test("exports a GitHub Pages-ready workout app", async () => {
   const parsedWorkouts = JSON.parse(workouts);
   assert.equal(parsedWorkouts.schedule.monday.label, "Day 1");
   assert.equal(parsedWorkouts.schedule.wednesday.workout, "cardio");
-  assert.equal(parsedWorkouts.workouts.cardio.title, "30-Minute Walk-Run");
-  assert.equal(parsedWorkouts.workouts.cardio.duration, "30 min");
-  assert.equal(parsedWorkouts.workouts.cardio.exercises[0].name, "Walk-Run Intervals");
+  assert.equal(parsedWorkouts.workouts.cardio.title, "Indoor Cardio Circuit");
+  assert.equal(parsedWorkouts.workouts.cardio.duration, "About 30 min");
+  assert.equal(parsedWorkouts.workouts.cardio.exercises[0].name, "Jumping Jack Warm-Up");
+  assert.ok(
+    parsedWorkouts.workouts.cardio.exercises.some(
+      (exercise) => exercise.name === "Step-Back Burpee",
+    ),
+  );
   assert.equal(parsedWorkouts.schedule.friday.label, "Day 5");
   assert.equal(parsedWorkouts.workouts.lower.exercises.length, 6);
   assert.equal(parsedWorkouts.workouts.upper.exercises.length, 6);
@@ -41,14 +46,18 @@ test("exports a GitHub Pages-ready workout app", async () => {
   assert.equal(parsedWorkouts.homeWorkouts.lower.exercises.length, 6);
   assert.equal(parsedWorkouts.homeWorkouts.upper.exercises.length, 6);
   assert.equal(parsedWorkouts.homeWorkouts.cardio.duration, "About 30 min");
-  assert.equal(parsedWorkouts.homeWorkouts.cardio.exercises.length, 4);
+  assert.equal(parsedWorkouts.homeWorkouts.cardio.exercises.length, 5);
   assert.match(parsedWorkouts.homeWorkouts.lower.note, /no equipment needed/i);
   assert.ok(
     Object.values(parsedWorkouts.homeWorkouts).every(
       (workout) =>
         workout.exercises.length === 0 ||
-        workout.exercises[0].name === "Jog Around the Block",
+        workout.exercises[0].name === "Jumping Jack Warm-Up",
     ),
+  );
+  assert.equal(
+    JSON.stringify(parsedWorkouts.homeWorkouts).match(/outdoor|jog around the block/gi),
+    null,
   );
   assert.ok(
     Object.values(parsedWorkouts.homeWorkouts)
