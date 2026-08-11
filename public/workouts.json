@@ -1,13 +1,11 @@
 {
-  "schedule": {
-    "monday": { "label": "Day 1", "workout": "lower" },
-    "tuesday": { "label": "Day 2", "workout": "upper" },
-    "wednesday": { "label": "Day 3", "workout": "cardio" },
-    "thursday": { "label": "Day 4", "workout": "lower" },
-    "friday": { "label": "Day 5", "workout": "upper" },
-    "saturday": { "label": "Recovery", "workout": "recovery" },
-    "sunday": { "label": "Recovery", "workout": "recovery" }
-  },
+  "rotation": [
+    { "label": "Workout 1", "workout": "lower" },
+    { "label": "Workout 2", "workout": "upper" },
+    { "label": "Workout 3", "workout": "cardio" },
+    { "label": "Workout 4", "workout": "lower" },
+    { "label": "Workout 5", "workout": "upper" }
+  ],
   "workouts": {
     "lower": {
       "title": "Lower Body + Steady Cardio",

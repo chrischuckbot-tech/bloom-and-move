@@ -28,8 +28,10 @@ test("exports a GitHub Pages-ready workout app", async () => {
   assert.equal(parsedManifest.icons.length, 2);
 
   const parsedWorkouts = JSON.parse(workouts);
-  assert.equal(parsedWorkouts.schedule.monday.label, "Day 1");
-  assert.equal(parsedWorkouts.schedule.wednesday.workout, "cardio");
+  assert.deepEqual(
+    parsedWorkouts.rotation.map((entry) => entry.workout),
+    ["lower", "upper", "cardio", "lower", "upper"],
+  );
   assert.equal(parsedWorkouts.workouts.cardio.title, "30-Minute Treadmill Run/Jog");
   assert.equal(parsedWorkouts.workouts.cardio.duration, "30 min");
   assert.equal(parsedWorkouts.workouts.cardio.exercises.length, 1);
@@ -38,7 +40,6 @@ test("exports a GitHub Pages-ready workout app", async () => {
     parsedWorkouts.workouts.cardio.exercises[0].video,
     "https://www.youtube.com/watch?v=kHD1NaSdwzI",
   );
-  assert.equal(parsedWorkouts.schedule.friday.label, "Day 5");
   assert.equal(parsedWorkouts.workouts.lower.exercises.length, 6);
   assert.equal(parsedWorkouts.workouts.upper.exercises.length, 6);
   assert.match(parsedWorkouts.workouts.upper.note, /2 reps in reserve \(RIR\)/i);

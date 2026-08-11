@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s · Erie’s Workout",
   },
   description:
-    "A cute, simple, beginner-friendly weekly workout plan with an easy calendar view.",
+    "A cute, simple, beginner-friendly rolling workout plan that moves at your pace.",
   applicationName: "Erie’s Workout",
   manifest: `${basePath}/manifest.webmanifest`,
   icons: {
@@ -29,21 +29,21 @@ export const metadata: Metadata = {
     type: "website",
     url: canonicalUrl,
     title: "Erie’s Workout",
-    description: "A gentle weekly workout plan—one day at a time.",
+    description: "A gentle rolling workout plan—one session at a time.",
     siteName: "Erie’s Workout",
     images: [
       {
         url: socialImageUrl,
         width: 1731,
         height: 909,
-        alt: "Erie’s Workout calendar",
+        alt: "Erie’s rolling workout plan",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Erie’s Workout",
-    description: "A gentle weekly workout plan—one day at a time.",
+    description: "A gentle rolling workout plan—one session at a time.",
     images: [socialImageUrl],
   },
 };

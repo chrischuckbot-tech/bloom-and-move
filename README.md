@@ -1,18 +1,18 @@
 # Erie’s Workout
 
-A tiny, mobile-first workout calendar that works as an installable iPhone web app. It has no server, no accounts, and no sensitive data.
+A tiny, mobile-first rolling workout plan that works as an installable iPhone web app. It has no server, no accounts, and no sensitive data.
 
 ## Change the workouts
 
 Edit [`public/workouts.json`](public/workouts.json). The important pieces are:
 
-- `schedule`: which workout appears on each weekday
+- `rotation`: the order workouts appear in the rolling queue
 - `workouts`: gym titles, exercises, sets/reps, cues, and YouTube links
 - `homeWorkouts`: no-equipment bodyweight and cardio alternatives
 
-The calendar uses the normal Sunday-to-Saturday layout. Workout Day 1 is always Monday: lower body Monday, upper body Tuesday, a treadmill run/jog at the gym or indoor cardio circuit at home on Wednesday, lower body Thursday, and upper body Friday.
+The plan is not tied to weekdays. It keeps the current workout on screen until “Finished this workout” is tapped, then advances through lower body, upper body, cardio, lower body, and upper body before starting the rotation again. Workdays and rest days can happen whenever needed.
 
-Workout location, exercise progress, and completed days are saved locally on the device. The app has no account or cloud sync.
+Workout location, exercise progress, and the current rotation position are saved locally on the device. The app has no account or cloud sync.
 
 ## Run it locally
 

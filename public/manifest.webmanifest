@@ -1,7 +1,7 @@
 {
   "name": "Erie’s Workout",
   "short_name": "Erie’s",
-  "description": "A gentle, beginner-friendly weekly workout plan.",
+  "description": "A gentle, beginner-friendly rolling workout plan.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
