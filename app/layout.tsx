@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s · Erie’s Workout",
   },
   description:
-    "A cute, simple, beginner-friendly rolling workout plan that moves at your pace.",
+    "A cute rolling strength, cardio, and core plan that progresses at your pace.",
   applicationName: "Erie’s Workout",
   manifest: `${basePath}/manifest.webmanifest`,
   icons: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     url: canonicalUrl,
     title: "Erie’s Workout",
-    description: "A gentle rolling workout plan—one session at a time.",
+    description: "A progressive rolling strength, cardio, and core plan—one session at a time.",
     siteName: "Erie’s Workout",
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Erie’s Workout",
-    description: "A gentle rolling workout plan—one session at a time.",
+    description: "A progressive rolling strength, cardio, and core plan—one session at a time.",
     images: [socialImageUrl],
   },
 };

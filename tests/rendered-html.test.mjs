@@ -1,8 +1,23 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
+import {
+  getProgressionStage,
+  isProgressionResetRound,
+} from "../lib/workout-progression.mjs";
 
 const root = new URL("../", import.meta.url);
+
+test("cycles exercise prescriptions every three rotation rounds", () => {
+  assert.deepEqual(
+    [1, 2, 3, 4, 5, 6, 7].map((round) => getProgressionStage(round)),
+    [0, 1, 2, 0, 1, 2, 0],
+  );
+  assert.deepEqual(
+    [1, 2, 3, 4, 5, 6, 7].filter((round) => isProgressionResetRound(round)),
+    [4, 7],
+  );
+});
 
 test("exports a GitHub Pages-ready workout app", async () => {
   const [html, manifest, workouts, serviceWorker] = await Promise.all([
@@ -40,11 +55,11 @@ test("exports a GitHub Pages-ready workout app", async () => {
     parsedWorkouts.workouts.cardio.exercises[0].video,
     "https://www.youtube.com/watch?v=kHD1NaSdwzI",
   );
-  assert.equal(parsedWorkouts.workouts.lower.exercises.length, 6);
-  assert.equal(parsedWorkouts.workouts.upper.exercises.length, 6);
+  assert.equal(parsedWorkouts.workouts.lower.exercises.length, 8);
+  assert.equal(parsedWorkouts.workouts.upper.exercises.length, 7);
   assert.match(parsedWorkouts.workouts.upper.note, /2 reps in reserve \(RIR\)/i);
   assert.equal(parsedWorkouts.homeWorkouts.lower.title, "At-Home Legs + Cardio");
-  assert.equal(parsedWorkouts.homeWorkouts.lower.exercises.length, 6);
+  assert.equal(parsedWorkouts.homeWorkouts.lower.exercises.length, 8);
   assert.equal(parsedWorkouts.homeWorkouts.upper.exercises.length, 7);
   assert.equal(parsedWorkouts.homeWorkouts.cardio.duration, "About 30 min");
   assert.equal(parsedWorkouts.homeWorkouts.cardio.exercises.length, 5);
@@ -98,11 +113,11 @@ test("exports a GitHub Pages-ready workout app", async () => {
       (exercise) => exercise.name === "Reverse Lunge",
     ),
   );
-  assert.equal(
+  assert.deepEqual(
     parsedWorkouts.homeWorkouts.lower.exercises.find(
       (exercise) => exercise.name === "Single-Leg Glute Bridge",
-    ).prescription,
-    "3 × 10 each side",
+    ).prescriptions,
+    ["3 × 8 each side", "3 × 10 each side", "3 × 12 each side"],
   );
   assert.equal(
     parsedWorkouts.homeWorkouts.lower.exercises.some(
@@ -133,11 +148,11 @@ test("exports a GitHub Pages-ready workout app", async () => {
     ),
     false,
   );
-  assert.equal(
+  assert.deepEqual(
     parsedWorkouts.homeWorkouts.upper.exercises.find(
       (exercise) => exercise.name === "Forearm Plank",
-    ).prescription,
-    "2 × max hold",
+    ).prescriptions,
+    ["2 × 20 sec", "2 × 30 sec", "2 × 40 sec"],
   );
   assert.equal(
     Object.values(parsedWorkouts.homeWorkouts)
@@ -147,6 +162,45 @@ test("exports a GitHub Pages-ready workout app", async () => {
   );
   assert.equal("intensity" in parsedWorkouts, false);
   assert.equal("tips" in parsedWorkouts, false);
+
+  const everyExercise = [parsedWorkouts.workouts, parsedWorkouts.homeWorkouts]
+    .flatMap((workoutSet) => Object.values(workoutSet))
+    .flatMap((workout) => workout.exercises);
+  assert.ok(
+    everyExercise.every(
+      (exercise) =>
+        (typeof exercise.prescription === "string") !== Array.isArray(exercise.prescriptions),
+    ),
+  );
+  assert.ok(
+    everyExercise
+      .filter((exercise) => Array.isArray(exercise.prescriptions))
+      .every(
+        (exercise) =>
+          exercise.prescriptions.length === 3 &&
+          exercise.prescriptions.every((value) => typeof value === "string" && value.length > 0) &&
+          typeof exercise.resetCue === "string" &&
+          exercise.resetCue.length > 0,
+      ),
+  );
+
+  const gymCaptainChairRaises = Object.values(parsedWorkouts.workouts)
+    .flatMap((workout) => workout.exercises)
+    .filter((exercise) => exercise.name === "Captain’s Chair Leg Raise");
+  assert.equal(gymCaptainChairRaises.length, 2);
+  assert.ok(
+    gymCaptainChairRaises.every(
+      (exercise) =>
+        exercise.video === "https://www.youtube.com/watch?v=7KDDZtaUaxw" &&
+        /without swinging/i.test(exercise.details),
+    ),
+  );
+  assert.equal(
+    Object.values(parsedWorkouts.homeWorkouts)
+      .flatMap((workout) => workout.exercises)
+      .some((exercise) => /captain/i.test(exercise.name)),
+    false,
+  );
 
   const squat = parsedWorkouts.workouts.lower.exercises.find(
     (exercise) => exercise.name === "Dumbbell Goblet Squat",

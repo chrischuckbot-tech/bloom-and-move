@@ -755,6 +755,21 @@ summary:focus-visible {
   line-height: 1.52;
 }
 
+.exercise-card .progression-reset {
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  border: 1px solid #eed7c9;
+  border-radius: 11px;
+  background: #fff4ec;
+  color: #7a4a3e;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.progression-reset strong {
+  color: #9b4f45;
+}
+
 .exercise-copy {
   min-width: 0;
 }

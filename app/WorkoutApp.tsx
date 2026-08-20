@@ -2,10 +2,16 @@
 
 import { useEffect, useState } from "react";
 import workoutPlan from "../public/workouts.json";
+import {
+  getProgressionStage,
+  isProgressionResetRound,
+} from "../lib/workout-progression.mjs";
 
 type Exercise = {
   name: string;
-  prescription: string;
+  prescription?: string;
+  prescriptions?: [string, string, string];
+  resetCue?: string;
   details: string;
   video: string;
   videoLabel: string;
@@ -37,6 +43,7 @@ const plan = workoutPlan as {
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const workoutModeStorageKey = "bloom-workout-mode";
 const rotationPositionStorageKey = "bloom-rotation-position-v1";
+const messageIndexStorageKey = "bloom-message-index";
 
 const dailyMessages = [
   {
@@ -73,15 +80,27 @@ const dailyMessages = [
   },
 ] as const;
 
-function startOfDay(date: Date) {
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
-}
+function getPseudorandomMessageIndex() {
+  const randomIndex = (length: number) => Math.floor(Math.random() * length);
 
-function getDailyMessage(date: Date) {
-  const dayNumber = Math.floor(
-    Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86_400_000,
-  );
-  return dailyMessages[dayNumber % dailyMessages.length];
+  try {
+    const previousIndex = Number(window.localStorage.getItem(messageIndexStorageKey));
+    const hasPreviousIndex =
+      Number.isSafeInteger(previousIndex) &&
+      previousIndex >= 0 &&
+      previousIndex < dailyMessages.length;
+    const nextIndex = hasPreviousIndex && dailyMessages.length > 1
+      ? (() => {
+          const candidate = randomIndex(dailyMessages.length - 1);
+          return candidate >= previousIndex ? candidate + 1 : candidate;
+        })()
+      : randomIndex(dailyMessages.length);
+
+    window.localStorage.setItem(messageIndexStorageKey, String(nextIndex));
+    return nextIndex;
+  } catch {
+    return randomIndex(dailyMessages.length);
+  }
 }
 
 function exerciseStorageKey(position: number, mode: WorkoutMode) {
@@ -116,6 +135,24 @@ function getWorkout(workoutKey: RotationEntry["workout"], mode: WorkoutMode) {
   return workouts[workoutKey];
 }
 
+function getExercisePrescription(exercise: Exercise, rotationRound: number) {
+  if (exercise.prescriptions) {
+    return exercise.prescriptions[
+      getProgressionStage(rotationRound, exercise.prescriptions.length)
+    ];
+  }
+
+  return exercise.prescription ?? "";
+}
+
+function isProgressionReset(exercise: Exercise, rotationRound: number) {
+  return Boolean(
+    exercise.prescriptions &&
+    exercise.resetCue &&
+    isProgressionResetRound(rotationRound, exercise.prescriptions.length),
+  );
+}
+
 function getYouTubeVideoId(videoUrl?: string) {
   if (!videoUrl) return null;
   try {
@@ -128,7 +165,7 @@ function getYouTubeVideoId(videoUrl?: string) {
 }
 
 export function WorkoutApp() {
-  const [today, setToday] = useState<Date | null>(null);
+  const [messageIndex, setMessageIndex] = useState<number | null>(null);
   const [rotationPosition, setRotationPosition] = useState(0);
   const [workoutMode, setWorkoutMode] = useState<WorkoutMode>("gym");
   const [completed, setCompleted] = useState<string[]>([]);
@@ -138,8 +175,7 @@ export function WorkoutApp() {
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
-      const localToday = startOfDay(new Date());
-      setToday(localToday);
+      setMessageIndex(getPseudorandomMessageIndex());
       const savedMode = readWorkoutMode();
       const savedPosition = readRotationPosition();
       setWorkoutMode(savedMode);
@@ -161,7 +197,7 @@ export function WorkoutApp() {
     return () => window.cancelAnimationFrame(frame);
   }, []);
 
-  if (!today) {
+  if (messageIndex === null) {
     return (
       <main className="loading-screen" aria-live="polite">
         <span className="loading-flower" aria-hidden="true">✿</span>
@@ -176,7 +212,7 @@ export function WorkoutApp() {
   const nextStep = plan.rotation[(rotationIndex + 1) % plan.rotation.length];
   const workout = getWorkout(currentStep.workout, workoutMode);
   const nextWorkout = getWorkout(nextStep.workout, workoutMode);
-  const dailyMessage = getDailyMessage(today);
+  const dailyMessage = dailyMessages[messageIndex];
   const progress = workout.exercises.length
     ? Math.round((completed.length / workout.exercises.length) * 100)
     : 0;
@@ -207,9 +243,6 @@ export function WorkoutApp() {
     setPlayingVideo(null);
     setStatusMessage(`${workout.shortTitle} complete. ${nextWorkout.shortTitle} is up next.`);
     window.localStorage.setItem(rotationPositionStorageKey, String(nextPosition));
-    window.requestAnimationFrame(() => {
-      document.getElementById("today")?.scrollIntoView({ behavior: "smooth" });
-    });
   }
 
   function goBackOneWorkout() {
@@ -389,6 +422,8 @@ export function WorkoutApp() {
           <div className="exercise-list">
             {workout.exercises.map((exercise, index) => {
               const checked = completed.includes(String(index));
+              const prescription = getExercisePrescription(exercise, rotationRound);
+              const showResetCue = isProgressionReset(exercise, rotationRound);
               const videoId = getYouTubeVideoId(exercise.video);
               const playerKey = `${rotationPosition}-${workoutMode}-${index}`;
               const isPlaying = playingVideo === playerKey;
@@ -407,9 +442,14 @@ export function WorkoutApp() {
                   <div className="exercise-copy">
                     <div className="exercise-title-row">
                       <h3>{exercise.name}</h3>
-                      <span className="prescription">{exercise.prescription}</span>
+                      <span className="prescription">{prescription}</span>
                     </div>
                     <p>{exercise.details}</p>
+                    {showResetCue && (
+                      <p className="progression-reset">
+                        <strong>Level up:</strong> {exercise.resetCue}
+                      </p>
+                    )}
                     {videoId && !isPlaying && (
                       <button
                         className="video-button"

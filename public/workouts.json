@@ -10,52 +10,73 @@
     "lower": {
       "title": "Lower Body + Steady Cardio",
       "shortTitle": "Lower body day",
-      "focus": "Leg strength, hip stability, and easy endurance.",
-      "duration": "About 45 min",
+      "focus": "Leg strength, hip stability, easy endurance, and a strong core.",
+      "duration": "About 55 min",
       "kind": "lower",
-      "note": "Weeks 1–2: keep every weight light and focus on feeling comfortable with each movement.",
+      "note": "Rest 60–90 seconds between strength sets and leave about 2 clean reps in reserve. Finish with the two core moves.",
       "exercises": [
         {
           "name": "Zone 2 Cardio",
-          "prescription": "20 min",
+          "prescription": "15 min",
           "details": "Incline treadmill at 2–4% and 2.5–3.5 mph, or use a stationary bike. Keep a conversation pace without gasping.",
           "video": "https://www.youtube.com/watch?v=38vUyIo69ww",
           "videoLabel": "Watch incline walking form"
         },
         {
           "name": "Dumbbell Goblet Squat",
-          "prescription": "3 × 8–10",
+          "prescriptions": ["3 × 8", "3 × 10", "3 × 12"],
+          "resetCue": "Increase the dumbbell by the smallest comfortable amount.",
           "details": "Hold a light dumbbell at your chest. Sit your hips back, gently drive your knees outward over your middle toes, and press through the outer edges of your feet as you stand. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=nfX7IFK9UNI",
           "videoLabel": "Watch NASM form guide"
         },
         {
           "name": "Seated Leg Press",
-          "prescription": "3 × 10–12",
+          "prescriptions": ["3 × 8", "3 × 10", "3 × 12"],
+          "resetCue": "Increase the machine by one small plate increment.",
           "details": "Move with control, gently drive your knees outward over your middle toes, and keep a soft bend in your knees at the top—do not lock them out. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=qCR9bN3G1t4",
           "videoLabel": "Watch PureGym setup"
         },
         {
           "name": "Hip Abduction Machine",
-          "prescription": "3 × 12–15",
+          "prescriptions": ["3 × 12", "3 × 14", "3 × 15"],
+          "resetCue": "Increase the machine by one small plate increment.",
           "details": "Sit back against the pad and push your knees outward with control. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=ctSsNDgOTmk",
           "videoLabel": "Watch machine setup"
         },
         {
           "name": "Hip Adduction Machine",
-          "prescription": "3 × 12–15",
+          "prescriptions": ["3 × 12", "3 × 14", "3 × 15"],
+          "resetCue": "Increase the machine by one small plate increment.",
           "details": "Sit back against the pad and squeeze your knees inward together. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=iYcS9jCA6gE",
           "videoLabel": "Watch machine setup"
         },
         {
           "name": "Seated Leg Curl",
-          "prescription": "3 × 10–12",
+          "prescriptions": ["3 × 8", "3 × 10", "3 × 12"],
+          "resetCue": "Increase the machine by one small plate increment.",
           "details": "Adjust the seat so your knees line up with the machine pivot. Curl smoothly and return with control. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=_2Kd0d-JEUM",
           "videoLabel": "Watch NASM form guide"
+        },
+        {
+          "name": "Captain’s Chair Leg Raise",
+          "prescriptions": ["2 × 8", "2 × 10", "2 × 12"],
+          "resetCue": "Use straighter legs or add a controlled pause at the top.",
+          "details": "Press your forearms into the pads, keep your back against the support, and curl your knees toward your chest without swinging. Lower slowly and stop before your low back arches.",
+          "video": "https://www.youtube.com/watch?v=7KDDZtaUaxw",
+          "videoLabel": "Watch captain’s-chair leg-raise form"
+        },
+        {
+          "name": "Side Plank",
+          "prescriptions": ["2 × 20 sec/side", "2 × 30 sec/side", "2 × 40 sec/side"],
+          "resetCue": "Move from bent knees to straight legs, or add a controlled top-leg lift.",
+          "details": "Stack your elbow under your shoulder and keep your body in one long line. Lift your hips, brace your middle, and breathe without letting your hips rotate.",
+          "video": "https://www.youtube.com/watch?v=Oe9Tp9SvTCE",
+          "videoLabel": "Watch PureGym side-plank form"
         }
       ]
     },
@@ -63,9 +84,9 @@
       "title": "Upper Body + Incline Intervals",
       "shortTitle": "Upper body day",
       "focus": "Back, shoulders, chest, and core—with a heart-rate boost.",
-      "duration": "About 45 min",
+      "duration": "About 55 min",
       "kind": "upper",
-      "note": "Rest 60–90 seconds between strength sets. Finish each set with 2 reps in reserve (RIR)—stop when you feel like you could do two more clean reps. There is no prize for rushing.",
+      "note": "Rest 60–90 seconds between strength sets. Finish each set with 2 reps in reserve (RIR), then close with the two core moves. There is no prize for rushing.",
       "exercises": [
         {
           "name": "Incline Treadmill Intervals",
@@ -76,38 +97,51 @@
         },
         {
           "name": "Lat Pulldown",
-          "prescription": "3 × 10–12",
+          "prescriptions": ["3 × 8", "3 × 10", "3 × 12"],
+          "resetCue": "Increase the machine by one small plate increment.",
           "details": "Pull the bar toward your upper chest and squeeze your shoulder blades together. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=JGeRYIZdojU",
           "videoLabel": "Watch PureGym form guide"
         },
         {
           "name": "Seated Cable Row",
-          "prescription": "3 × 10–12",
+          "prescriptions": ["3 × 8", "3 × 10", "3 × 12"],
+          "resetCue": "Increase the cable by one small plate increment.",
           "details": "Keep your chest up and pull the handle toward your belly button. Return slowly. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=lJoozxC0Rns",
           "videoLabel": "Watch PureGym form guide"
         },
         {
           "name": "Dumbbell Lateral Raise",
-          "prescription": "3 × 12–15",
+          "prescriptions": ["3 × 12", "3 × 14", "3 × 15"],
+          "resetCue": "Move up to the next dumbbell only if every rep stays controlled.",
           "details": "Use light dumbbells—5–8 lb is plenty to start. Keep your shoulders away from your ears and your elbows soft, then raise your arms to shoulder height without swinging and lower with control. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=xDrYB81QXmY",
           "videoLabel": "Watch PureGym form guide"
         },
         {
           "name": "Chest Press Machine",
-          "prescription": "3 × 10–12",
+          "prescriptions": ["3 × 8", "3 × 10", "3 × 12"],
+          "resetCue": "Increase the machine by one small plate increment.",
           "details": "Set the handles at mid-chest. Press smoothly and keep a soft bend in your elbows. Stop at 2 RIR.",
           "video": "https://www.youtube.com/watch?v=sqNwDkUU_Ps",
           "videoLabel": "Watch PureGym setup"
         },
         {
-          "name": "Plank Hold",
-          "prescription": "3 × 20–30 sec",
-          "details": "Keep elbows under shoulders and make one long line from head to heels. Squeeze your core and breathe.",
-          "video": "https://www.youtube.com/watch?v=q4rDeHYMcIg",
-          "videoLabel": "Watch PureGym form guide"
+          "name": "Pallof Press",
+          "prescriptions": ["2 × 8 each side", "2 × 10 each side", "2 × 12 each side"],
+          "resetCue": "Increase the cable by one small plate increment.",
+          "details": "Stand sideways to the cable with the handle at chest height. Brace, press straight out, and resist being pulled into rotation. Pause briefly, then return with control.",
+          "video": "https://www.youtube.com/watch?v=f3R99GoYvCs",
+          "videoLabel": "Watch NASM Pallof-press form"
+        },
+        {
+          "name": "Captain’s Chair Leg Raise",
+          "prescriptions": ["2 × 8", "2 × 10", "2 × 12"],
+          "resetCue": "Use straighter legs or add a controlled pause at the top.",
+          "details": "Press your forearms into the pads, keep your back against the support, and curl your knees toward your chest without swinging. Lower slowly and stop before your low back arches.",
+          "video": "https://www.youtube.com/watch?v=7KDDZtaUaxw",
+          "videoLabel": "Watch captain’s-chair leg-raise form"
         }
       ]
     },
@@ -141,10 +175,10 @@
     "lower": {
       "title": "At-Home Legs + Cardio",
       "shortTitle": "Legs at home",
-      "focus": "Bodyweight leg strength and hip stability after a quick indoor warm-up.",
-      "duration": "About 40 min",
+      "focus": "Bodyweight leg strength, hip stability, and a short core finisher.",
+      "duration": "About 50 min",
       "kind": "lower",
-      "note": "No equipment needed. Start with the 5-minute jumping-jack warm-up. Rest 45–75 seconds between strength sets and stop each set while your form still feels clean.",
+      "note": "No equipment needed. Start with the 5-minute jumping-jack warm-up, rest 45–75 seconds between strength sets, and finish with the two core moves.",
       "exercises": [
         {
           "name": "Jumping Jack Warm-Up",
@@ -155,38 +189,59 @@
         },
         {
           "name": "Bodyweight Squat",
-          "prescription": "3 × 10–15",
+          "prescriptions": ["3 × 10", "3 × 12", "3 × 15"],
+          "resetCue": "Use a 3-second lowering phase or pause briefly at the bottom.",
           "details": "Stand with your feet about shoulder-width apart, sit your hips down and back, and keep your knees tracking over your middle toes. Press through your whole foot to stand. Keep a sturdy chair behind you as a depth guide if helpful.",
           "video": "https://www.youtube.com/watch?v=l83R5PblSMA",
           "videoLabel": "Watch PureGym squat form"
         },
         {
           "name": "Single-Leg Glute Bridge",
-          "prescription": "3 × 10 each side",
+          "prescriptions": ["3 × 8 each side", "3 × 10 each side", "3 × 12 each side"],
+          "resetCue": "Pause for 2 seconds at the top or elevate the planted foot.",
           "details": "Lie on your back with one knee bent and the other leg extended. Press through the planted heel, squeeze that glute, and lift while keeping your hips level. Lower with control and complete both sides.",
           "video": "https://www.youtube.com/watch?v=2sg3vqnE8qE",
           "videoLabel": "Watch single-leg glute bridge form"
         },
         {
           "name": "Reverse Lunge",
-          "prescription": "3 × 8 each side",
+          "prescriptions": ["3 × 8 each side", "3 × 10 each side", "3 × 12 each side"],
+          "resetCue": "Use a 3-second lowering phase or add a brief pause at the bottom.",
           "details": "Stand tall, step one foot back, and lower both knees with control. Keep your front knee tracking over your middle toes, then press through your front foot to return to standing.",
           "video": "https://www.youtube.com/watch?v=xrPteyQLGAo",
           "videoLabel": "Watch PureGym lunge form"
         },
         {
           "name": "Side-Lying Leg Raise",
-          "prescription": "3 × 12 each side",
+          "prescriptions": ["3 × 10 each side", "3 × 12 each side", "3 × 15 each side"],
+          "resetCue": "Add a 2-second pause at the top of every rep.",
           "details": "Lie on your side with hips stacked. Lift the top leg without rolling backward, pause, and lower slowly.",
           "video": "https://www.youtube.com/watch?v=6712eUWJ3Jo",
           "videoLabel": "Watch physical therapist form guide"
         },
         {
           "name": "Standing Calf Raise",
-          "prescription": "3 × 15–20",
+          "prescriptions": ["3 × 15", "3 × 18", "3 × 20"],
+          "resetCue": "Progress to single-leg reps while holding the wall for balance.",
           "details": "Hold a wall for balance, rise onto the balls of your feet, pause at the top, and lower with control.",
           "video": "https://www.youtube.com/watch?v=Zep-wKHWkNM",
           "videoLabel": "Watch PureGym form guide"
+        },
+        {
+          "name": "Dead Bug",
+          "prescriptions": ["2 × 8 each side", "2 × 10 each side", "2 × 12 each side"],
+          "resetCue": "Straighten the moving leg more fully or pause just above the floor.",
+          "details": "Lie on your back with arms up and knees bent. Keep your low back gently grounded as you extend the opposite arm and leg, then switch.",
+          "video": "https://www.youtube.com/watch?v=9RK9UUgKIQE",
+          "videoLabel": "Watch PureGym form guide"
+        },
+        {
+          "name": "Side Plank",
+          "prescriptions": ["2 × 20 sec/side", "2 × 30 sec/side", "2 × 40 sec/side"],
+          "resetCue": "Move from bent knees to straight legs, or add a controlled top-leg lift.",
+          "details": "Stack your elbow under your shoulder and keep your body in one long line. Lift your hips, brace your middle, and breathe without letting your hips rotate.",
+          "video": "https://www.youtube.com/watch?v=Oe9Tp9SvTCE",
+          "videoLabel": "Watch PureGym side-plank form"
         }
       ]
     },
@@ -194,9 +249,9 @@
       "title": "At-Home Upper Body + Cardio",
       "shortTitle": "Upper body at home",
       "focus": "Back, chest, shoulders, and core after a quick indoor warm-up.",
-      "duration": "About 40 min",
+      "duration": "About 50 min",
       "kind": "upper",
-      "note": "No workout equipment needed. Start with the 5-minute jumping-jack warm-up and grab a folded towel for the floor lat slides. Choose a wall, counter, or couch arm that makes the push-ups feel smooth, rest 45–75 seconds between sets, and leave about 2 clean reps in reserve.",
+      "note": "No workout equipment needed. Start with the warm-up, grab a folded towel for the floor lat slides, rest 45–75 seconds between sets, and finish with reverse crunches and forearm planks.",
       "exercises": [
         {
           "name": "Jumping Jack Warm-Up",
@@ -207,43 +262,49 @@
         },
         {
           "name": "Incline Push-Up",
-          "prescription": "3 × 8–12",
+          "prescriptions": ["3 × 8", "3 × 10", "3 × 12"],
+          "resetCue": "Lower your hands to the next stable surface.",
           "details": "Place your hands on a sturdy wall, counter, or couch arm. Keep one long line from head to heels, lower your chest with control, and press away.",
           "video": "https://www.youtube.com/watch?v=yAbg3_pJKvw",
           "videoLabel": "Watch PureGym form guide"
         },
         {
           "name": "Superman Back Extension",
-          "prescription": "3 × 10–12",
+          "prescriptions": ["3 × 8", "3 × 10", "3 × 12"],
+          "resetCue": "Add a 2-second pause at the top without lifting higher.",
           "details": "Lie face down with your arms reaching overhead. Brace your middle, gently lift your arms and legs, squeeze through your back and glutes, then lower slowly. Keep the lift small and your neck relaxed.",
           "video": "https://www.youtube.com/watch?v=kTMBsUwEGPM",
           "videoLabel": "Watch PureGym back exercise form"
         },
         {
           "name": "Floor Lat Slides",
-          "prescription": "3 × 8–12",
+          "prescriptions": ["3 × 8", "3 × 10", "3 × 12"],
+          "resetCue": "Reach farther while keeping your ribs tucked and back steady.",
           "details": "On a smooth floor, kneel with a folded towel under your knees and start on all fours. Brace your core, slide your knees backward as your arms reach long, then pull your body forward using your lats. Keep your shoulders away from your ears and do not let your lower back sag.",
           "video": "https://www.youtube.com/watch?v=jtskZxMzZL8",
           "videoLabel": "Watch floor lat slide form"
         },
         {
           "name": "High Plank Shoulder Tap",
-          "prescription": "3 × 8 each side",
+          "prescriptions": ["3 × 8 each side", "3 × 10 each side", "3 × 12 each side"],
+          "resetCue": "Bring your feet slightly closer together while keeping your hips still.",
           "details": "Start in a high plank from your toes with your hands under your shoulders and feet set wide for stability. Brace your core and tap the opposite shoulder without rocking your hips. Move slowly and keep a straight line from head to heels.",
           "video": "https://www.youtube.com/watch?v=QOCn3_iOAro",
           "videoLabel": "Watch high-plank shoulder-tap form"
         },
         {
-          "name": "Dead Bug",
-          "prescription": "3 × 8 each side",
-          "details": "Lie on your back with arms up and knees bent. Keep your low back gently grounded as you extend the opposite arm and leg, then switch.",
-          "video": "https://www.youtube.com/watch?v=9RK9UUgKIQE",
-          "videoLabel": "Watch PureGym form guide"
+          "name": "Reverse Crunch",
+          "prescriptions": ["2 × 8", "2 × 10", "2 × 12"],
+          "resetCue": "Add a controlled 2-second pause with your hips lifted.",
+          "details": "Lie on your back with knees bent. Draw your knees toward your chest, curl your hips gently off the floor, pause, and lower slowly without using momentum.",
+          "video": "https://www.youtube.com/watch?v=XY8KzdDcMFg",
+          "videoLabel": "Watch PureGym reverse-crunch form"
         },
         {
           "name": "Forearm Plank",
-          "prescription": "2 × max hold",
-          "details": "Hold from your toes for as long as you can keep clean form. Keep your elbows under your shoulders, brace your middle, squeeze your glutes, and breathe steadily. Stop when your hips begin to sag or rise, then rest 60–90 seconds before the second hold.",
+          "prescriptions": ["2 × 20 sec", "2 × 30 sec", "2 × 40 sec"],
+          "resetCue": "Reach your elbows slightly farther forward for a harder long-lever plank.",
+          "details": "Keep your elbows under your shoulders, brace your middle, squeeze your glutes, and breathe steadily. Stop early if your hips begin to sag or rise.",
           "video": "https://www.youtube.com/watch?v=q4rDeHYMcIg",
           "videoLabel": "Watch PureGym form guide"
         }

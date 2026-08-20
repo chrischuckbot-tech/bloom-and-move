@@ -1,7 +1,7 @@
 {
   "name": "Erie’s Workout",
   "short_name": "Erie’s",
-  "description": "A gentle, beginner-friendly rolling workout plan.",
+  "description": "A progressive rolling strength, cardio, and core plan.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
